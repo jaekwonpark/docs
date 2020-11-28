@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <HelpInfo xmlns="http://schemas.microsoft.com/powershell/help/2010/05">
-   <HelpContentURI>https://github.com/jaekwonpark/docs/tree/master/cmdlet-help</HelpContentURI>
+	<HelpContentURI>https://github.com/jaekwonpark/docs/tree/v0.0.1/cmdlet-help/</HelpContentURI>
    <SupportedUICultures>
     <UICulture>
       <UICultureName>en-US</UICultureName>
