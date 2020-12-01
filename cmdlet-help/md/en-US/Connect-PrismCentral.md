@@ -8,7 +8,7 @@ schema: 2.0.0
 # Connect-PrismCentral
 
 ## SYNOPSIS
-Connects to Prism Central host
+Connects to Prism Central
 
 ## SYNTAX
 
@@ -18,21 +18,21 @@ Connect-PrismCentral [-Server] <String> -UserName <String> -Password <SecureStri
 ```
 
 ## DESCRIPTION
-Connects to Prism Central host. Takes IP or hostname along with user's credentials.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Connect-PrismCentral -Server 10.46.28.30 -Username admin -Password adminpassword -AcceptInvalidSSLCerts
+PS C:\> {{ Add example code here }}
 ```
 
-Connects to Prism Central host 10.46.28.30 as admin user and ignore invalid ssl certs.
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AcceptInvalidSSLCerts
-Whether to accept invalid SSL certificates. Use this option to access the host that has the certificate which is not validated by certificate authority and you sure the host is legit.
+Whether to accept invalid SSL certificates.
 
 ```yaml
 Type: SwitchParameter
@@ -63,6 +63,8 @@ Accept wildcard characters: False
 
 ### -Password
 Password for login.
+E.g.
+admin
 
 ```yaml
 Type: SecureString
@@ -77,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
-Name or IP address of Prism Central host.
+Name or IP address of Nutanix node.
 
 ```yaml
 Type: String
@@ -93,6 +95,8 @@ Accept wildcard characters: False
 
 ### -UserName
 User Name for login.
+E.g.
+admin
 
 ```yaml
 Type: String
