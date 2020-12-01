@@ -10,7 +10,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Connect to Prism Central IP or Hostname</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -181,7 +181,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Connect-PrismCentral -Server 10.46.28.50 -Username admin -Password $Secure -AcceptInvalidSSLCerts</dev:code>
         <dev:remarks>
           <maml:para>{{ Add example description here }}</maml:para>
         </dev:remarks>

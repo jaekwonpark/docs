@@ -18,13 +18,13 @@ Connect-PrismCentral [-Server] <String> -UserName <String> -Password <SecureStri
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Connect to Prism Central IP or Hostname
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Connect-PrismCentral -Server 10.46.28.50 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
 {{ Add example description here }}
