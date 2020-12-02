@@ -181,9 +181,9 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Connect-PrismCentral -Server 10.46.28.52 -Username admin -Password $Secure -AcceptInvalidSSLCerts</dev:code>
+        <dev:code>PS C:\&gt; Connect-PrismCentral -Server 10.46.28.53 -Username admin -Password $Secure -AcceptInvalidSSLCerts</dev:code>
         <dev:remarks>
-          <maml:para>To Connect to Prism Central IP 10.46.28.52 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate</maml:para>
+          <maml:para>To Connect to Prism Central IP 10.46.28.53 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
