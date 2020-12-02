@@ -27,7 +27,7 @@ Connect to Prism Central IP or Hostname
 PS C:\> Connect-PrismCentral -Server 10.46.28.50 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
-{{ Add example description here }}
+To Connect to Prism Central IP 10.46.28.50 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
 
 ## PARAMETERS
 
