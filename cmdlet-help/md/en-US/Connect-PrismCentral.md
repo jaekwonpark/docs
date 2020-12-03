@@ -24,10 +24,10 @@ Connect to Prism Central IP or Hostname
 
 ### Example 1
 ```powershell
-PS C:\> Connect-PrismCentral -Server 10.46.28.53 -Username admin -Password $Secure -AcceptInvalidSSLCerts
+PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
-To Connect to Prism Central IP 10.46.28.53 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
+To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
 
 ## PARAMETERS
 
