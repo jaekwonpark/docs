@@ -1,0 +1,1 @@
+New-ExternalHelpCab -CabFilesFolder .\xml\en-US\ -LandingPagePath .\md\en-US\Nutanix.Prism.Common.md -OutputFolder .
