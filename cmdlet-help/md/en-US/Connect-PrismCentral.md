@@ -29,7 +29,7 @@ PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Sec
 
 To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
 Remove this 
----------- Ver 23 ------------
+---------- Ver 24 ------------
 $Secure=ConvertTo-SecureString Nutanix.123 -AsPlainText -Force
 
 ## PARAMETERS
