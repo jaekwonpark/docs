@@ -27,9 +27,8 @@ Connect to Prism Central IP or Hostname
 PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
-To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
-Remove this 
----------- Ver 27 ------------
+사용자명 admin 과 SecureString 타입의 비밀번호를 이용하여 Prism Central IP 10.36.240.21 에 연결 하기.
+---------- Ver 0.0.0.1 ------------
 $Secure=ConvertTo-SecureString Nutanix.123 -AsPlainText -Force
 
 ## PARAMETERS
