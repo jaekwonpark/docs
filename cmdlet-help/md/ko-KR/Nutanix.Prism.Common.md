@@ -12,5 +12,5 @@ Nutanix Common Module
 
 ## Nutanix.Prism.Common Cmdlets
 ### [Connect-PrismCentral](Connect-PrismCentral.md)
-Nutanix Prism Common Cmdlets
+Connects to Prism Central
 
