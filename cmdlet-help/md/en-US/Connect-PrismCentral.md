@@ -27,10 +27,8 @@ Connect to Prism Central IP or Hostname
 PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
-To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate
-Remove this 
----------- Ver 27 ------------
-$Secure=ConvertTo-SecureString Nutanix.123 -AsPlainText -Force
+To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. Pasword can be stored with following command. Replace 'adminpassword' with your real admin password string
+$Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force
 
 ## PARAMETERS
 
