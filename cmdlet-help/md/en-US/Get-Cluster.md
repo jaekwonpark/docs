@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-Cluster
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Displays cluster info registered to the prism central. If multiple prism centrals are connected, all clusters under connected prism centrals are displayed
 
 ## SYNTAX
 
@@ -17,21 +17,26 @@ Get-Cluster [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Shows name, UUID of the cluster and name, UUID, hostname of the registered Prism Central
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-Cluster
+
+Name    : auto_cluster_prod_anonymous_1af4b03c80f7
+UUID    : 0005b81c-2155-xxxx-0000-0000000097fe
+PC_UUID : dd257747-2074-xxxx-af43-de31ccd42987
+PC_Name : Unnamed
+PC_Host : 10.46.28.31
 ```
 
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Nutanix node
+Hostname or IP address of  Prism Central
 
 ```yaml
 Type: String[]

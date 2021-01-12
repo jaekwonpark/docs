@@ -6,11 +6,11 @@
       <command:verb>Get</command:verb>
       <command:noun>Cluster</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Displays cluster info registered to the prism central. If multiple prism centrals are connected, all clusters under connected prism centrals are displayed</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Shows name, UUID of the cluster and name, UUID, hostname of the registered Prism Central</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -18,7 +18,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Hostname or IP address of  Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -33,7 +33,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Hostname or IP address of  Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -71,9 +71,15 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-Cluster
+
+Name    : auto_cluster_prod_anonymous_1af4b03c80f7
+UUID    : 0005b81c-2155-xxxx-0000-0000000097fe
+PC_UUID : dd257747-2074-xxxx-af43-de31ccd42987
+PC_Name : Unnamed
+PC_Host : 10.46.28.31</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
