@@ -91,11 +91,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Get</command:verb>
       <command:noun>Image</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Returns Image info of specified uuid or all Images, if -ImageId is not given</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Returns Image info of specified UUID or all Images, if -Image is not given</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -103,7 +103,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Hostname or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -115,7 +115,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ImageId</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageId Description }}</maml:para>
+            <maml:para>Image UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -123,28 +123,6 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeVmDiskPaths</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeVmDiskPaths Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeVmDiskSizes</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeVmDiskSizes Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -152,7 +130,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Hostname or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -164,7 +142,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ImageId</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageId Description }}</maml:para>
+            <maml:para>Image UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -173,35 +151,13 @@ PC_Host : 10.46.28.31</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeVmDiskPaths</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeVmDiskPaths Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeVmDiskSizes</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeVmDiskSizes Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>ImageId</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ImageId Description }}</maml:para>
+          <maml:para>Image UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -210,34 +166,10 @@ PC_Host : 10.46.28.31</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>IncludeVmDiskPaths</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill IncludeVmDiskPaths Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>IncludeVmDiskSizes</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill IncludeVmDiskSizes Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Hostname or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -291,9 +223,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-Image  -ImageId 452f17c2-c1fb-46a8-bbec-2eb914b9b425 | ConvertTo-Json -Depth 3</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>To get more details, change -Depth to higher number</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -305,11 +237,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Get</command:verb>
       <command:noun>Metric</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Returns metric of the cluster for given time period</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Returns metric of the cluster for given time period.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -317,7 +249,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Hostname or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -329,7 +261,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterName</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterName Description }}</maml:para>
+            <maml:para>Clustername can be obtained by Get-Cluster command</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -341,7 +273,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>EndTimeInUsecs</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill EndTimeInUsecs Description }}</maml:para>
+            <maml:para>End unix time in micro seconds</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -353,7 +285,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill IntervalInSecs Description }}</maml:para>
+            <maml:para>Interval in seconds</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -365,7 +297,76 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Metrics</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Metrics Description }}</maml:para>
+            <maml:para>Metric of interest. Available metrics name are \   // Number of IO.\   num_io </maml:para>
+            <maml:para>  // Number of read IO. \   num_read_io </maml:para>
+            <maml:para>  // Number of random IO. \   num_random_io </maml:para>
+            <maml:para>  // Total IO size. \   total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size.\   total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   total_read_io_time_usecs </maml:para>
+            <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.\   timespan_usecs </maml:para>
+            <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   total_transformed_usage_bytes </maml:para>
+            <maml:para>  // Transformed space usage before transformation.   total_untransformed_usage_bytes </maml:para>
+            <maml:para>  // The time span over which the stats reported by the Hypervisor are   // recorded.\   hypervisor_timespan_usecs </maml:para>
+            <maml:para>  // Total number of reads and writes as reported by the Hypervisor.\   hypervisor_num_io </maml:para>
+            <maml:para>  // Number of reads as reported by the Hypervisor.\   hypervisor_num_read_io </maml:para>
+            <maml:para>  // Total IO size (reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size on a virtual disk as reported by the Hypervisor.\   hypervisor_total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time (for the reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time as reported by the Hypervisor.\   hypervisor_total_read_io_time_usecs </maml:para>
+            <maml:para>  // Number of IO.\   controller_num_io </maml:para>
+            <maml:para>  // Number of read IO.\   controller_num_read_io </maml:para>
+            <maml:para>  // Number of random IO.\   controller_num_random_io </maml:para>
+            <maml:para>  // Total IO size.\   controller_total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size.\   controller_total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_read_io_time_usecs </maml:para>
+            <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.   controller_timespan_usecs \</maml:para>
+            <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   controller_total_transformed_usage_bytes </maml:para>
+            <maml:para>  // Average read i/o size.\   controller_avg_read_io_size_kbytes </maml:para>
+            <maml:para>  // Average write i/o size.\   controller_avg_write_io_size_kbytes </maml:para>
+            <maml:para>  // Number of write IO.\   num_write_io </maml:para>
+            <maml:para>  // Number of sequential IO.\   num_seq_io </maml:para>
+            <maml:para>  // Number of IO per second.\   num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second.\   io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency.\   avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   read_io_ppm </maml:para>
+            <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   write_io_ppm </maml:para>
+            <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   random_io_ppm </maml:para>
+            <maml:para>  // Sequential IO percentage expressed in parts per million.To get   // percentage, the value should be divided by 1 million and multipled   // by 100.\   seq_io_ppm </maml:para>
+            <maml:para>  / Hypervisor derived stats /</maml:para>
+            <maml:para>  // Number of writes as reported by the Hypervisor.\   hypervisor_num_write_io </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second as reported by the Hypervisor.\   hypervisor_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency as reported by the Hypervisor.\   hypervisor_avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Number of read IO per second.\   num_read_iops </maml:para>
+            <maml:para>  // Number of write IO per second.\   num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_read_iops </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of read write IO per second reported by the Hypervisor.\   hypervisor_read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of write write IO per second reported by the Hypervisor.\   hypervisor_write_io_bandwidth_kBps </maml:para>
+            <maml:para>  / Controller derived stats /</maml:para>
+            <maml:para>  // Number of write IO.\   controller_num_write_io </maml:para>
+            <maml:para>  // Number of sequential IO.\   controller_num_seq_io </maml:para>
+            <maml:para>  // Number of IO per second.\   controller_num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second.\   controller_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency.\   controller_avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_read_io_ppm </maml:para>
+            <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_write_io_ppm </maml:para>
+            <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_random_io_ppm </maml:para>
+            <maml:para>  // Sequential IO percentage expressed in parts per million.To get\   // percentage, the value should be divided by 1 million and multipled   // by 100.\   controller_seq_io_ppm </maml:para>
+            <maml:para>  // Number of read IO per second.\   controller_num_read_iops </maml:para>
+            <maml:para>  // Number of write IO per second.\   controller_num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of storage controller read IO per second reported by Stargate.\   controller_read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of storage controller write IO per second reported by Stargate.\   controller_write_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of disk read IO per second reported by Stargate.\   read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of disk write IO per second reported by Stargate.\   write_io_bandwidth_kBps</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -377,7 +378,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>StartTimeInUsecs</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill StartTimeInUsecs Description }}</maml:para>
+            <maml:para>Start unix time in micro seconds</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -392,7 +393,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Hostname or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -404,7 +405,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterName</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterName Description }}</maml:para>
+            <maml:para>Clustername can be obtained by Get-Cluster command</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -416,7 +417,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>EndTimeSecsAgo</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill EndTimeSecsAgo Description }}</maml:para>
+            <maml:para>End time N seconds ago</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -428,7 +429,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill IntervalInSecs Description }}</maml:para>
+            <maml:para>Interval in seconds</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -440,7 +441,76 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Metrics</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Metrics Description }}</maml:para>
+            <maml:para>Metric of interest. Available metrics name are \   // Number of IO.\   num_io </maml:para>
+            <maml:para>  // Number of read IO. \   num_read_io </maml:para>
+            <maml:para>  // Number of random IO. \   num_random_io </maml:para>
+            <maml:para>  // Total IO size. \   total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size.\   total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   total_read_io_time_usecs </maml:para>
+            <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.\   timespan_usecs </maml:para>
+            <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   total_transformed_usage_bytes </maml:para>
+            <maml:para>  // Transformed space usage before transformation.   total_untransformed_usage_bytes </maml:para>
+            <maml:para>  // The time span over which the stats reported by the Hypervisor are   // recorded.\   hypervisor_timespan_usecs </maml:para>
+            <maml:para>  // Total number of reads and writes as reported by the Hypervisor.\   hypervisor_num_io </maml:para>
+            <maml:para>  // Number of reads as reported by the Hypervisor.\   hypervisor_num_read_io </maml:para>
+            <maml:para>  // Total IO size (reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size on a virtual disk as reported by the Hypervisor.\   hypervisor_total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time (for the reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time as reported by the Hypervisor.\   hypervisor_total_read_io_time_usecs </maml:para>
+            <maml:para>  // Number of IO.\   controller_num_io </maml:para>
+            <maml:para>  // Number of read IO.\   controller_num_read_io </maml:para>
+            <maml:para>  // Number of random IO.\   controller_num_random_io </maml:para>
+            <maml:para>  // Total IO size.\   controller_total_io_size_kbytes </maml:para>
+            <maml:para>  // Total read IO size.\   controller_total_read_io_size_kbytes </maml:para>
+            <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_io_time_usecs </maml:para>
+            <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_read_io_time_usecs </maml:para>
+            <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.   controller_timespan_usecs \</maml:para>
+            <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   controller_total_transformed_usage_bytes </maml:para>
+            <maml:para>  // Average read i/o size.\   controller_avg_read_io_size_kbytes </maml:para>
+            <maml:para>  // Average write i/o size.\   controller_avg_write_io_size_kbytes </maml:para>
+            <maml:para>  // Number of write IO.\   num_write_io </maml:para>
+            <maml:para>  // Number of sequential IO.\   num_seq_io </maml:para>
+            <maml:para>  // Number of IO per second.\   num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second.\   io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency.\   avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   read_io_ppm </maml:para>
+            <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   write_io_ppm </maml:para>
+            <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   random_io_ppm </maml:para>
+            <maml:para>  // Sequential IO percentage expressed in parts per million.To get   // percentage, the value should be divided by 1 million and multipled   // by 100.\   seq_io_ppm </maml:para>
+            <maml:para>  / Hypervisor derived stats /</maml:para>
+            <maml:para>  // Number of writes as reported by the Hypervisor.\   hypervisor_num_write_io </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second as reported by the Hypervisor.\   hypervisor_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency as reported by the Hypervisor.\   hypervisor_avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Number of read IO per second.\   num_read_iops </maml:para>
+            <maml:para>  // Number of write IO per second.\   num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_read_iops </maml:para>
+            <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of read write IO per second reported by the Hypervisor.\   hypervisor_read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of write write IO per second reported by the Hypervisor.\   hypervisor_write_io_bandwidth_kBps </maml:para>
+            <maml:para>  / Controller derived stats /</maml:para>
+            <maml:para>  // Number of write IO.\   controller_num_write_io </maml:para>
+            <maml:para>  // Number of sequential IO.\   controller_num_seq_io </maml:para>
+            <maml:para>  // Number of IO per second.\   controller_num_iops </maml:para>
+            <maml:para>  // IO bandwidth - KB per second.\   controller_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Average IO latency.\   controller_avg_io_latency_usecs </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_read_io_latency_usecs </maml:para>
+            <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_read_io_ppm </maml:para>
+            <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_write_io_ppm </maml:para>
+            <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_random_io_ppm </maml:para>
+            <maml:para>  // Sequential IO percentage expressed in parts per million.To get\   // percentage, the value should be divided by 1 million and multipled   // by 100.\   controller_seq_io_ppm </maml:para>
+            <maml:para>  // Number of read IO per second.\   controller_num_read_iops </maml:para>
+            <maml:para>  // Number of write IO per second.\   controller_num_write_iops </maml:para>
+            <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_write_io_latency_usecs </maml:para>
+            <maml:para>  // Number of storage controller read IO per second reported by Stargate.\   controller_read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of storage controller write IO per second reported by Stargate.\   controller_write_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of disk read IO per second reported by Stargate.\   read_io_bandwidth_kBps </maml:para>
+            <maml:para>  // Number of disk write IO per second reported by Stargate.\   write_io_bandwidth_kBps</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -452,7 +522,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>StartTimeSecsAgo</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill StartTimeSecsAgo Description }}</maml:para>
+            <maml:para>Start time N secods ago</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -467,7 +537,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterName</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterName Description }}</maml:para>
+          <maml:para>Clustername can be obtained by Get-Cluster command</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -479,7 +549,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>EndTimeInUsecs</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill EndTimeInUsecs Description }}</maml:para>
+          <maml:para>End unix time in micro seconds</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -491,7 +561,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>EndTimeSecsAgo</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill EndTimeSecsAgo Description }}</maml:para>
+          <maml:para>End time N seconds ago</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -503,7 +573,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>IntervalInSecs</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill IntervalInSecs Description }}</maml:para>
+          <maml:para>Interval in seconds</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
@@ -515,7 +585,76 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>Metrics</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Metrics Description }}</maml:para>
+          <maml:para>Metric of interest. Available metrics name are \   // Number of IO.\   num_io </maml:para>
+          <maml:para>  // Number of read IO. \   num_read_io </maml:para>
+          <maml:para>  // Number of random IO. \   num_random_io </maml:para>
+          <maml:para>  // Total IO size. \   total_io_size_kbytes </maml:para>
+          <maml:para>  // Total read IO size.\   total_read_io_size_kbytes </maml:para>
+          <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   total_io_time_usecs </maml:para>
+          <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   total_read_io_time_usecs </maml:para>
+          <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.\   timespan_usecs </maml:para>
+          <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   total_transformed_usage_bytes </maml:para>
+          <maml:para>  // Transformed space usage before transformation.   total_untransformed_usage_bytes </maml:para>
+          <maml:para>  // The time span over which the stats reported by the Hypervisor are   // recorded.\   hypervisor_timespan_usecs </maml:para>
+          <maml:para>  // Total number of reads and writes as reported by the Hypervisor.\   hypervisor_num_io </maml:para>
+          <maml:para>  // Number of reads as reported by the Hypervisor.\   hypervisor_num_read_io </maml:para>
+          <maml:para>  // Total IO size (reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_size_kbytes </maml:para>
+          <maml:para>  // Total read IO size on a virtual disk as reported by the Hypervisor.\   hypervisor_total_read_io_size_kbytes </maml:para>
+          <maml:para>  // Total IO time (for the reads and writes) as reported by the Hypervisor.\   hypervisor_total_io_time_usecs </maml:para>
+          <maml:para>  // Total read IO time as reported by the Hypervisor.\   hypervisor_total_read_io_time_usecs </maml:para>
+          <maml:para>  // Number of IO.\   controller_num_io </maml:para>
+          <maml:para>  // Number of read IO.\   controller_num_read_io </maml:para>
+          <maml:para>  // Number of random IO.\   controller_num_random_io </maml:para>
+          <maml:para>  // Total IO size.\   controller_total_io_size_kbytes </maml:para>
+          <maml:para>  // Total read IO size.\   controller_total_read_io_size_kbytes </maml:para>
+          <maml:para>  // Total IO time. For example, if there are 2 IOs, each of them takes\   // 1 msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_io_time_usecs </maml:para>
+          <maml:para>  // Total read IO time. For example, if there are 2 IOs, each of them takes 1\   // msecs. The total_io_time_usecs is 2000 usecs.\   controller_total_read_io_time_usecs </maml:para>
+          <maml:para>  // The time span which the stats is recorded. For example, if stargate is\   // sending data once very 10s, timespan is 10,000,000 usecs.   controller_timespan_usecs \</maml:para>
+          <maml:para>  // Transformed space usage is bytes after transformation (like compression,   // encryption etc).\   controller_total_transformed_usage_bytes </maml:para>
+          <maml:para>  // Average read i/o size.\   controller_avg_read_io_size_kbytes </maml:para>
+          <maml:para>  // Average write i/o size.\   controller_avg_write_io_size_kbytes </maml:para>
+          <maml:para>  // Number of write IO.\   num_write_io </maml:para>
+          <maml:para>  // Number of sequential IO.\   num_seq_io </maml:para>
+          <maml:para>  // Number of IO per second.\   num_iops </maml:para>
+          <maml:para>  // IO bandwidth - KB per second.\   io_bandwidth_kBps </maml:para>
+          <maml:para>  // Average IO latency.\   avg_io_latency_usecs </maml:para>
+          <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_read_io_latency_usecs </maml:para>
+          <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   read_io_ppm </maml:para>
+          <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   write_io_ppm </maml:para>
+          <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   random_io_ppm </maml:para>
+          <maml:para>  // Sequential IO percentage expressed in parts per million.To get   // percentage, the value should be divided by 1 million and multipled   // by 100.\   seq_io_ppm </maml:para>
+          <maml:para>  / Hypervisor derived stats /</maml:para>
+          <maml:para>  // Number of writes as reported by the Hypervisor.\   hypervisor_num_write_io </maml:para>
+          <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_iops </maml:para>
+          <maml:para>  // IO bandwidth - KB per second as reported by the Hypervisor.\   hypervisor_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Average IO latency as reported by the Hypervisor.\   hypervisor_avg_io_latency_usecs </maml:para>
+          <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_read_io_latency_usecs </maml:para>
+          <maml:para>  // Number of read IO per second.\   num_read_iops </maml:para>
+          <maml:para>  // Number of write IO per second.\   num_write_iops </maml:para>
+          <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   avg_write_io_latency_usecs </maml:para>
+          <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_read_iops </maml:para>
+          <maml:para>  // Number of IO per second as reported by the Hypervisor.\   hypervisor_num_write_iops </maml:para>
+          <maml:para>  // Average read IO latency as reproted by the Hypervisor.\   hypervisor_avg_write_io_latency_usecs </maml:para>
+          <maml:para>  // Number of read write IO per second reported by the Hypervisor.\   hypervisor_read_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Number of write write IO per second reported by the Hypervisor.\   hypervisor_write_io_bandwidth_kBps </maml:para>
+          <maml:para>  / Controller derived stats /</maml:para>
+          <maml:para>  // Number of write IO.\   controller_num_write_io </maml:para>
+          <maml:para>  // Number of sequential IO.\   controller_num_seq_io </maml:para>
+          <maml:para>  // Number of IO per second.\   controller_num_iops </maml:para>
+          <maml:para>  // IO bandwidth - KB per second.\   controller_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Average IO latency.\   controller_avg_io_latency_usecs </maml:para>
+          <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_read_io_latency_usecs </maml:para>
+          <maml:para>  // Read IO percentage expressed in  parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_read_io_ppm </maml:para>
+          <maml:para>  // Write IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_write_io_ppm </maml:para>
+          <maml:para>  // Random IO percentage expressed in parts per million. To get percentage,   // the value should be divided by 1 million and multipled by 100.\   controller_random_io_ppm </maml:para>
+          <maml:para>  // Sequential IO percentage expressed in parts per million.To get\   // percentage, the value should be divided by 1 million and multipled   // by 100.\   controller_seq_io_ppm </maml:para>
+          <maml:para>  // Number of read IO per second.\   controller_num_read_iops </maml:para>
+          <maml:para>  // Number of write IO per second.\   controller_num_write_iops </maml:para>
+          <maml:para>  // Average read IO latency. This is not available for VDisk, Disk, Node,   // StoragePool and Cluster since Stargate does not have the stats.\   controller_avg_write_io_latency_usecs </maml:para>
+          <maml:para>  // Number of storage controller read IO per second reported by Stargate.\   controller_read_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Number of storage controller write IO per second reported by Stargate.\   controller_write_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Number of disk read IO per second reported by Stargate.\   read_io_bandwidth_kBps </maml:para>
+          <maml:para>  // Number of disk write IO per second reported by Stargate.\   write_io_bandwidth_kBps</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -527,7 +666,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Hostname or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -539,7 +678,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>StartTimeInUsecs</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill StartTimeInUsecs Description }}</maml:para>
+          <maml:para>Start unix time in micro seconds</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -551,7 +690,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>StartTimeSecsAgo</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill StartTimeSecsAgo Description }}</maml:para>
+          <maml:para>Start time N secods ago</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -613,9 +752,16 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-Metric -Server 10.46.28.31 -ClusterName auto_cluster_prod_jae_park_1af4b03c80f7 -Metrics controller_num_iops -StartTimeSecsAgo 600 -EndTimeSecsAgo 0 -IntervalInSecs 60</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Example will show the metric controller_num_iops from 600 seconds ago till now with 60 seconds of interval from the cluster. To get cluster name use Get-Cluster command.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; (Get-Metric -Server 10.46.28.31 -ClusterName auto_cluster_prod_jae_park_1af4b03c80f7 -Metrics controller_num_iops -StartTimeSecsAgo 600 -EndTimeSecsAgo 0 -IntervalInSecs 60).values</dev:code>
+        <dev:remarks>
+          <maml:para>To get metric data only, as an input to post process or another pipe, use .values to the command like above.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -627,11 +773,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Get</command:verb>
       <command:noun>Task</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Returns tasks</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Returns tasks. By default, it returns running tasks. With -IncludeCompleted, returns last 20 tasks</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -639,7 +785,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -649,91 +795,20 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>Count</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill Count Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-          <dev:type>
-            <maml:name>Int32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>EntityTypes</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EntityTypes Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>EntityUuids</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EntityUuids Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>EpochCutOffTime</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EpochCutOffTime Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
-          <dev:type>
-            <maml:name>Int64</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>IncludeCompleted</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill IncludeCompleted Description }}</maml:para>
+            <maml:para>If given, it returns last 20 tasks</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeEntityNames</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>OperationTypeList</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill OperationTypeList Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Taskid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Taskid Description }}</maml:para>
+            <maml:para>Task UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -748,7 +823,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -757,81 +832,10 @@ PC_Host : 10.46.28.31</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>Count</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill Count Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-          <dev:type>
-            <maml:name>Int32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>EntityTypes</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EntityTypes Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>EntityUuids</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EntityUuids Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>EpochCutOffTime</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill EpochCutOffTime Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
-          <dev:type>
-            <maml:name>Int64</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeEntityNames</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>OperationTypeList</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill OperationTypeList Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Taskid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Taskid Description }}</maml:para>
+            <maml:para>Task UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -844,57 +848,9 @@ PC_Host : 10.46.28.31</dev:code>
     </command:syntax>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>Count</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill Count Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-        <dev:type>
-          <maml:name>Int32</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>EntityTypes</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill EntityTypes Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-        <dev:type>
-          <maml:name>Object</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>EntityUuids</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill EntityUuids Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-        <dev:type>
-          <maml:name>Object</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>EpochCutOffTime</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill EpochCutOffTime Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
-        <dev:type>
-          <maml:name>Int64</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>IncludeCompleted</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill IncludeCompleted Description }}</maml:para>
+          <maml:para>If given, it returns last 20 tasks</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -902,35 +858,11 @@ PC_Host : 10.46.28.31</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>IncludeEntityNames</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>OperationTypeList</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill OperationTypeList Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-        <dev:type>
-          <maml:name>Object</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -942,7 +874,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>Taskid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Taskid Description }}</maml:para>
+          <maml:para>Task UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1012,9 +944,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-Task -IncludeCompleted</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This will return last 20 tasks that are completed or running</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -1026,11 +958,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Get</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Returns a list of VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Retuns a list of VM with informations of VM</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1038,7 +970,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1050,7 +982,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>Count</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Count Description }}</maml:para>
+            <maml:para>Number of VM to display per Prism Central that is connected</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -1062,7 +994,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>FilterCriteria</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill FilterCriteria Description }}</maml:para>
+            <maml:para>Filter list separated by ';', For example, 'is_cvm==0;power_state==on'</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1074,7 +1006,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>Page</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Page Description }}</maml:para>
+            <maml:para>Page to display</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -1086,7 +1018,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SearchAttributeList</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SearchAttributeList Description }}</maml:para>
+            <maml:para>Search attribute list. Ex) vm_id, uuid, power_state, vm_name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1098,7 +1030,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SearchString</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SearchString Description }}</maml:para>
+            <maml:para>String to search for given SearchAttributeList</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1110,7 +1042,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SortCriteria</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SortCriteria Description }}</maml:para>
+            <maml:para>Sort criteria. Ex) vm_id, uuid, power_state, vm_name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1120,9 +1052,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>VmId</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmId Description }}</maml:para>
+            <maml:para>UUID of VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1137,7 +1069,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1149,7 +1081,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>Count</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Count Description }}</maml:para>
+            <maml:para>Number of VM to display per Prism Central that is connected</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -1161,7 +1093,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>FilterCriteria</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill FilterCriteria Description }}</maml:para>
+            <maml:para>Filter list separated by ';', For example, 'is_cvm==0;power_state==on'</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1173,7 +1105,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>Page</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Page Description }}</maml:para>
+            <maml:para>Page to display</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -1185,7 +1117,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SearchAttributeList</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SearchAttributeList Description }}</maml:para>
+            <maml:para>Search attribute list. Ex) vm_id, uuid, power_state, vm_name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1197,7 +1129,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SearchString</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SearchString Description }}</maml:para>
+            <maml:para>String to search for given SearchAttributeList</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1209,7 +1141,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>SortCriteria</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SortCriteria Description }}</maml:para>
+            <maml:para>Sort criteria. Ex) vm_id, uuid, power_state, vm_name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1219,9 +1151,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>VmId</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmId Description }}</maml:para>
+            <maml:para>UUID of VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1236,7 +1168,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>Count</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Count Description }}</maml:para>
+          <maml:para>Number of VM to display per Prism Central that is connected</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
@@ -1248,7 +1180,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>FilterCriteria</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill FilterCriteria Description }}</maml:para>
+          <maml:para>Filter list separated by ';', For example, 'is_cvm==0;power_state==on'</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1260,7 +1192,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
         <maml:name>Page</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Page Description }}</maml:para>
+          <maml:para>Page to display</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
@@ -1272,7 +1204,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>SearchAttributeList</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill SearchAttributeList Description }}</maml:para>
+          <maml:para>Search attribute list. Ex) vm_id, uuid, power_state, vm_name</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1284,7 +1216,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>SearchString</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill SearchString Description }}</maml:para>
+          <maml:para>String to search for given SearchAttributeList</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1296,7 +1228,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -1308,7 +1240,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>SortCriteria</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill SortCriteria Description }}</maml:para>
+          <maml:para>Sort criteria. Ex) vm_id, uuid, power_state, vm_name</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1318,9 +1250,9 @@ PC_Host : 10.46.28.31</dev:code>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>VmId</maml:name>
+        <maml:name>Uuid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill VmId Description }}</maml:para>
+          <maml:para>UUID of VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1374,9 +1306,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-VM</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Returns VM info of currently connected Prism Central</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -1415,6 +1347,10 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:para>{{ Fill ImageType Description }}</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
@@ -1472,6 +1408,10 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:para>{{ Fill ImageType Description }}</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">ISO_IMAGE</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
@@ -1689,6 +1629,22 @@ PC_Host : 10.46.28.31</dev:code>
             <command:parameterValue required="false" command:variableLength="false">XEN</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">ESX</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">KVM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AHV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HYPERV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VMWARE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XEN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ESX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KVM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AHV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HYPERV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VMWARE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XEN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ESX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KVM</command:parameterValue>
           </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">Enum_Enum</command:parameterValue>
           <dev:type>
@@ -1814,6 +1770,22 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:para>{{ Fill HypervisorType Description }}</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AHV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HYPERV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VMWARE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XEN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ESX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KVM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AHV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HYPERV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VMWARE</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XEN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ESX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">KVM</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">AHV</command:parameterValue>
@@ -2539,11 +2511,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Set</command:verb>
       <command:noun>Image</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Updates attributes of given image uuid</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Updates attributes of given image uuid</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2758,11 +2730,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Set</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Update VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Updates VM attributes</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2770,7 +2742,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -2782,7 +2754,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Boot</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Boot Description }}</maml:para>
+            <maml:para>BootConfigDTO object to update to the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
           <dev:type>
@@ -2794,7 +2766,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterName</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterName Description }}</maml:para>
+            <maml:para>Cluster name where VM is in. you can use either cluster name or cluster UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2806,7 +2778,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Description</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Description Description }}</maml:para>
+            <maml:para>Description to the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2818,7 +2790,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>MemoryMb</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+            <maml:para>Memory size in MB</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2830,7 +2802,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>Name of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2842,7 +2814,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumCoresPerVcpu</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+            <maml:para>Number of Cores per VCPU</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2854,7 +2826,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumVcpus</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+            <maml:para>Number of VCPUs</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2866,7 +2838,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Timezone</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Timezone Description }}</maml:para>
+            <maml:para>Time zone</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2878,7 +2850,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Uuid Description }}</maml:para>
+            <maml:para>UUID of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2893,7 +2865,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -2905,7 +2877,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Boot</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Boot Description }}</maml:para>
+            <maml:para>BootConfigDTO object to update to the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
           <dev:type>
@@ -2917,7 +2889,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID where VM is in, you can use either cluster UUID or cluster name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2929,7 +2901,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Description</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Description Description }}</maml:para>
+            <maml:para>Description to the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2941,7 +2913,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>MemoryMb</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+            <maml:para>Memory size in MB</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2953,7 +2925,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>Name of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2965,7 +2937,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumCoresPerVcpu</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+            <maml:para>Number of Cores per VCPU</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2977,7 +2949,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumVcpus</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+            <maml:para>Number of VCPUs</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -2989,7 +2961,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Timezone</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Timezone Description }}</maml:para>
+            <maml:para>Time zone</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3001,7 +2973,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Uuid Description }}</maml:para>
+            <maml:para>UUID of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3016,7 +2988,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Boot</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Boot Description }}</maml:para>
+          <maml:para>BootConfigDTO object to update to the VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
         <dev:type>
@@ -3028,7 +3000,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterName</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterName Description }}</maml:para>
+          <maml:para>Cluster name where VM is in. you can use either cluster name or cluster UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3040,7 +3012,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterUUID</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+          <maml:para>Cluster UUID where VM is in, you can use either cluster UUID or cluster name</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3052,7 +3024,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Description</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Description Description }}</maml:para>
+          <maml:para>Description to the VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3064,7 +3036,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>MemoryMb</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+          <maml:para>Memory size in MB</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -3076,7 +3048,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Name</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Name Description }}</maml:para>
+          <maml:para>Name of the VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3088,7 +3060,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>NumCoresPerVcpu</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+          <maml:para>Number of Cores per VCPU</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -3100,7 +3072,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>NumVcpus</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+          <maml:para>Number of VCPUs</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -3112,7 +3084,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -3124,7 +3096,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Timezone</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Timezone Description }}</maml:para>
+          <maml:para>Time zone</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3136,7 +3108,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>Uuid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Uuid Description }}</maml:para>
+          <maml:para>UUID of the VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3198,9 +3170,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Set-Vm -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f -MemoryMb 700 | Wait-Task -Server 10.46.152.135 -Timeoutseconds 5</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Example sets memory to 700 MB and waits for the task completed or exit in 5 seconds.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -3212,11 +3184,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Start</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Power on the VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Set power on to given VM</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -3224,7 +3196,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3236,7 +3208,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3246,9 +3218,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -3263,7 +3235,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3275,7 +3247,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3285,9 +3257,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -3302,7 +3274,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterUUID</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+          <maml:para>Cluster UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3314,7 +3286,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -3324,9 +3296,9 @@ PC_Host : 10.46.28.31</dev:code>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>Vmid</maml:name>
+        <maml:name>Uuid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Vmid Description }}</maml:para>
+          <maml:para>UUID of VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -3380,9 +3352,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-VM -SearchString off -SearchAttributeList power_state | Start-VM</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Example will power on all VMs that are power off state</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -3394,11 +3366,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Stop</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Power off the VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Power off VM</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -3406,7 +3378,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3418,7 +3390,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3428,9 +3400,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of the VM to power off</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -3445,7 +3417,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3457,7 +3429,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -3467,9 +3439,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of the VM to power off</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -3484,7 +3456,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterUUID</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+          <maml:para>Cluster UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -3496,7 +3468,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -3506,9 +3478,9 @@ PC_Host : 10.46.28.31</dev:code>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>Vmid</maml:name>
+        <maml:name>Uuid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Vmid Description }}</maml:para>
+          <maml:para>UUID of the VM to power off</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -3562,9 +3534,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Get-VM -SearchString testvm -SearchAttributeList vm_name | Stop-VM</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Example will power off all VM if the VM name contains 'testvm'</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -3576,11 +3548,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Wait</command:verb>
       <command:noun>Task</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Waits untill all tasks are finished or timeout</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Waits for the list of tasks are finished. If Timeoutseconds is not given, waits until 30 seconds. Maximum wait is 30 seconds. If task does not finish till timeout, it will exit. In most cases, use pipe line input like examples</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -3588,7 +3560,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3596,17 +3568,6 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeEntityNames</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>TaskIDs</maml:name>
@@ -3638,7 +3599,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -3646,17 +3607,6 @@ PC_Host : 10.46.28.31</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-          <maml:name>IncludeEntityNames</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
           <maml:name>Timeoutseconds</maml:name>
@@ -3671,67 +3621,16 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>Wait-Task</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
-          <maml:name>Servers</maml:name>
-          <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-          <dev:type>
-            <maml:name>String[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>TaskIDDTOs</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill TaskIDDTOs Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
-        <maml:name>IncludeEntityNames</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill IncludeEntityNames Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
           <maml:name>String[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>TaskIDDTOs</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill TaskIDDTOs Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -3813,9 +3712,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Set-Vm -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f -MemoryMb 700 | Wait-Task -Server 10.46.152.135</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This will update VM and wait until it completes or till 30 seconds. Note that when multiple Prism Central are conntected, -Server has to be given so it does not failout from the Prism Central that does not have the task UUID.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

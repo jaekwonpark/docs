@@ -2,7 +2,7 @@
 Module Name: Nutanix.Prism.Common
 Module Guid: 90f6d4c4-e5b2-4ce4-9d79-6b6afefe9aa6
 Download Help Link: https://raw.githubusercontent.com/jaekwonpark/docs/master/cmdlet-help/
-Help Version: 0.0.0.31
+Help Version: 0.0.0.32
 Locale: en-US
 ---
 
@@ -15,13 +15,13 @@ Nutanix Common Module
 Connects to Prism Central
 
 ### [Disconnect-PrismCentral](Disconnect-PrismCentral.md)
-{{ Fill in the Synopsis }}
+Disconnect from one or all of prism central hosts
 
 ### [Get-Cluster](Get-Cluster.md)
-{{ Fill in the Synopsis }}
+Displays cluster info registered to the prism central. If multiple prism centrals are connected, all clusters under connected prism centrals are displayed
 
 ### [Get-Image](Get-Image.md)
-{{ Fill in the Synopsis }}
+Returns Image info of specified uuid or all Images, if -ImageId is not given
 
 ### [Get-Metric](Get-Metric.md)
 {{ Fill in the Synopsis }}

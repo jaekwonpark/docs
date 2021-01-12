@@ -44,7 +44,7 @@ PS C:\> {{ Add example code here }}
 Type: String
 Parameter Sets: Server
 Aliases:
-Accepted values: DISK_IMAGE, ISO_IMAGE
+Accepted values: DISK_IMAGE, ISO_IMAGE, DISK_IMAGE, ISO_IMAGE
 
 Required: True
 Position: Named
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 Type: String
 Parameter Sets: Template
 Aliases:
-Accepted values: DISK_IMAGE, ISO_IMAGE
+Accepted values: DISK_IMAGE, ISO_IMAGE, DISK_IMAGE, ISO_IMAGE
 
 Required: False
 Position: Named

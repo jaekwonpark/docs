@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns a list of VM
 
 ## SYNTAX
 
@@ -25,21 +25,21 @@ Get-VM [-Count <Int32>] [-FilterCriteria <Object>] [-SortCriteria <Object>] [-Se
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Retuns a list of VM with informations of VM
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-VM
 ```
 
-{{ Add example description here }}
+Returns VM info of currently connected Prism Central
 
 ## PARAMETERS
 
 ### -Count
-{{ Fill Count Description }}
+Number of VM to display per Prism Central that is connected
 
 ```yaml
 Type: Int32
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilterCriteria
-{{ Fill FilterCriteria Description }}
+Filter list separated by ';', For example, 'is_cvm==0;power_state==on'
 
 ```yaml
 Type: Object
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Page
-{{ Fill Page Description }}
+Page to display
 
 ```yaml
 Type: Int32
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -SearchAttributeList
-{{ Fill SearchAttributeList Description }}
+Search attribute list. Ex) vm_id, uuid, power_state, vm_name
 
 ```yaml
 Type: Object
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -SearchString
-{{ Fill SearchString Description }}
+String to search for given SearchAttributeList
 
 ```yaml
 Type: Object
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -SortCriteria
-{{ Fill SortCriteria Description }}
+Sort criteria. Ex) vm_id, uuid, power_state, vm_name
 
 ```yaml
 Type: Object
@@ -215,8 +215,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -VmId
-{{ Fill VmId Description }}
+### -Uuid
+UUID of VM
+
 
 ```yaml
 Type: Object

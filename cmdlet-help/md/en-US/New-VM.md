@@ -126,7 +126,7 @@ Accept wildcard characters: False
 Type: Enum_Enum
 Parameter Sets: Server
 Aliases:
-Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
+Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM, ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
 
 Required: False
 Position: Named
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Type: Enum_Enum
 Parameter Sets: Template
 Aliases:
-Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
+Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM, ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
 
 Required: False
 Position: Named

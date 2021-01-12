@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-Image
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Updates attributes of given image uuid
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Set-Image -Spec <Spec> -MetaData <MetaData> [-Name <String>] [-ImageType <String
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Updates attributes of given image uuid
 
 ## EXAMPLES
 

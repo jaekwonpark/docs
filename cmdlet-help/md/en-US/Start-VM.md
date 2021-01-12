@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Power on the VM
 
 ## SYNTAX
 
@@ -23,21 +23,21 @@ Start-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<Comm
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Set power on to given VM
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-VM -SearchString off -SearchAttributeList power_state | Start-VM
 ```
 
-{{ Add example description here }}
+Example will power on all VMs that are power off state
 
 ## PARAMETERS
 
 ### -ClusterUUID
-{{ Fill ClusterUUID Description }}
+Cluster UUID 
 
 ```yaml
 Type: String
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -78,8 +78,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Vmid
-{{ Fill Vmid Description }}
+### -Uuid
+UUID of VM
 
 ```yaml
 Type: Object

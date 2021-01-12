@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-Task
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns tasks
 
 ## SYNTAX
 
@@ -19,137 +19,22 @@ Get-Task [-Taskid <Object>] [-IncludeEntityNames] [-EntityTypes <Object>] [-Enti
  [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
-```
-Get-Task [-Taskid <Object>] [-IncludeEntityNames] [-EntityTypes <Object>] [-EntityUuids <Object>]
- [-OperationTypeList <Object>] [-EpochCutOffTime <Int64>] [-Count <Int32>] [[-Servers] <String[]>]
- [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns tasks. By default, it returns running tasks. With -IncludeCompleted, returns last 20 tasks
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-Task -IncludeCompleted
 ```
 
-{{ Add example description here }}
+This will return last 20 tasks that are completed or running
 
 ## PARAMETERS
 
-### -Count
-{{ Fill Count Description }}
-
-```yaml
-Type: Int32
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int32
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -EntityTypes
-{{ Fill EntityTypes Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -EntityUuids
-{{ Fill EntityUuids Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -EpochCutOffTime
-{{ Fill EpochCutOffTime Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
 ### -IncludeCompleted
-{{ Fill IncludeCompleted Description }}
+If given, it returns last 20 tasks
 
 ```yaml
 Type: SwitchParameter
@@ -160,65 +45,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -IncludeEntityNames
-{{ Fill IncludeEntityNames Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -OperationTypeList
-{{ Fill OperationTypeList Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -233,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Taskid
-{{ Fill Taskid Description }}
+Task UUID
 
 ```yaml
 Type: Object

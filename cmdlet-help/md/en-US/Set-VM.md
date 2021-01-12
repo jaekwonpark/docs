@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Update VM
 
 ## SYNTAX
 
@@ -27,21 +27,21 @@ Set-VM -Uuid <String> -ClusterUUID <String> [-Name <String>] [-Description <Stri
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Updates VM attributes
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-Vm -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f -MemoryMb 700 | Wait-Task -Server 10.46.152.135 -Timeoutseconds 5
 ```
 
-{{ Add example description here }}
+Example sets memory to 700 MB and waits for the task completed or exit in 5 seconds.
 
 ## PARAMETERS
 
 ### -Boot
-{{ Fill Boot Description }}
+BootConfigDTO object to update to the VM
 
 ```yaml
 Type: BootConfigDTO
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterName
-{{ Fill ClusterName Description }}
+Cluster name where VM is in. you can use either cluster name or cluster UUID
 
 ```yaml
 Type: String
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterUUID
-{{ Fill ClusterUUID Description }}
+Cluster UUID where VM is in, you can use either cluster UUID or cluster name
 
 ```yaml
 Type: String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-{{ Fill Description Description }}
+Description to the VM
 
 ```yaml
 Type: String
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemoryMb
-{{ Fill MemoryMb Description }}
+Memory size in MB
 
 ```yaml
 Type: Int64
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+Name of the VM
 
 ```yaml
 Type: String
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumCoresPerVcpu
-{{ Fill NumCoresPerVcpu Description }}
+Number of Cores per VCPU
 
 ```yaml
 Type: Int64
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumVcpus
-{{ Fill NumVcpus Description }}
+Number of VCPUs
 
 ```yaml
 Type: Int64
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timezone
-{{ Fill Timezone Description }}
+Time zone
 
 ```yaml
 Type: String
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uuid
-{{ Fill Uuid Description }}
+UUID of the VM
 
 ```yaml
 Type: String

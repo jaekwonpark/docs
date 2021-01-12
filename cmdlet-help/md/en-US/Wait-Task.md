@@ -8,7 +8,7 @@ schema: 2.0.0
 # Wait-Task
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Waits untill all tasks are finished or timeout
 
 ## SYNTAX
 
@@ -24,54 +24,23 @@ Wait-Task -TaskIDDTOs <System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acrop
  [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
-```
-Wait-Task [-Timeoutseconds <Int64>] [-IncludeEntityNames] [[-Servers] <String[]>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Waits for the list of tasks are finished. If Timeoutseconds is not given, waits until 30 seconds. Maximum wait is 30 seconds. If task does not finish till timeout, it will exit.
+In most cases, use pipe line input like examples
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-Vm -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f -MemoryMb 700 | Wait-Task -Server 10.46.152.135
 ```
 
-{{ Add example description here }}
+This will update VM and wait until it completes or till 30 seconds. Note that when multiple Prism Central are conntected, -Server has to be given so it does not failout from the Prism Central that does not have the task UUID.
 
 ## PARAMETERS
 
-### -IncludeEntityNames
-{{ Fill IncludeEntityNames Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -82,21 +51,6 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -TaskIDDTOs
-{{ Fill TaskIDDTOs Description }}
-
-```yaml
-Type: System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]
-Parameter Sets: Pipe
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 

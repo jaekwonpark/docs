@@ -47,7 +47,6 @@ To Connect to Prism Central IP 10.36.240.21 with credentials. $Cred can be creat
 $Cred = New-Object System.Management.Automation.PSCredential("admin", $Secure)
 and the $Secure can be created as same way as Example 1.
 
-
 ## PARAMETERS
 
 ### -AcceptInvalidSSLCerts

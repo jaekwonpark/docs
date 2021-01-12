@@ -273,6 +273,21 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Disconnect-PrismCentral</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>NutanixClusters</maml:name>
+          <maml:Description>
+            <maml:para>{{ Fill NutanixClusters Description }}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">NutanixCluster[]</command:parameterValue>
+          <dev:type>
+            <maml:name>NutanixCluster[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Disconnect-PrismCentral</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
@@ -288,6 +303,18 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>NutanixClusters</maml:name>
+        <maml:Description>
+          <maml:para>{{ Fill NutanixClusters Description }}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">NutanixCluster[]</command:parameterValue>
+        <dev:type>
+          <maml:name>NutanixCluster[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>

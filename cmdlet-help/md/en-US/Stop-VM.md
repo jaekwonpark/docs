@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Power off the VM
 
 ## SYNTAX
 
@@ -23,21 +23,21 @@ Stop-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<Commo
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Power off VM
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-VM -SearchString testvm -SearchAttributeList vm_name | Stop-VM
 ```
 
-{{ Add example description here }}
+Example will power off all VM if the VM name contains 'testvm'
 
 ## PARAMETERS
 
 ### -ClusterUUID
-{{ Fill ClusterUUID Description }}
+Cluster UUID
 
 ```yaml
 Type: String
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -78,8 +78,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Vmid
-{{ Fill Vmid Description }}
+### -Uuid
+UUID of the VM to power off
+
 
 ```yaml
 Type: Object

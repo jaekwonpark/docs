@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Nutanix.Prism.Common.dll-Help.xml
 Module Name: Nutanix.Prism.Common
 online version:
@@ -15,6 +15,11 @@ Disconnect from one or all of prism central hosts
 ### Server (Default)
 ```
 Disconnect-PrismCentral [-Servers] <String[]> [<CommonParameters>]
+```
+
+### NutanixCluster
+```
+Disconnect-PrismCentral -NutanixClusters <NutanixCluster[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,6 +42,21 @@ PS C:\> Disconnect-PrismCentral -Servers *
 Disconnects from all Prism Central hosts
 
 ## PARAMETERS
+
+### -NutanixClusters
+{{ Fill NutanixClusters Description }}
+
+```yaml
+Type: NutanixCluster[]
+Parameter Sets: NutanixCluster
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -Servers
 Name or IP address of Prism Central

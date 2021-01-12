@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-Image
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns Image info of specified uuid or all Images, if -ImageId is not given
 
 ## SYNTAX
 
@@ -18,28 +18,22 @@ Get-Image [-ImageId <Object>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths] [[-Ser
  [<CommonParameters>]
 ```
 
-### Template
-```
-Get-Image [-ImageId <Object>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths] [[-Servers] <String[]>]
- [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns Image info of specified UUID or all Images, if -Image is not given
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-Image  -ImageId 452f17c2-c1fb-46a8-bbec-2eb914b9b425 | ConvertTo-Json -Depth 3
 ```
 
-{{ Add example description here }}
+To get more details, change -Depth to higher number
 
 ## PARAMETERS
 
 ### -ImageId
-{{ Fill ImageId Description }}
+Image UUID
 
 ```yaml
 Type: Object
@@ -62,65 +56,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -IncludeVmDiskPaths
-{{ Fill IncludeVmDiskPaths Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -IncludeVmDiskSizes
-{{ Fill IncludeVmDiskSizes Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Hostname or IP address of Prism Central
 
 ```yaml
 Type: String[]
