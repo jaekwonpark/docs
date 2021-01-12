@@ -10,7 +10,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Connect to Prism Central IP or Hostname</maml:para>
+      <maml:para>Connect to Prism Central IP or Hostname. To connect multiple Prism Central, repeat this command with different IP or Hostname. To disconnect a Prism Central, use Disconnect-PrismCentral with -Server. To disconnect all, use * for -Server value. The session is valid for 15 minutes from last access to the Prism Central.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -18,7 +18,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
           <maml:name>Server</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node.</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -41,7 +41,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="C">
           <maml:name>Credential</maml:name>
           <maml:Description>
-            <maml:para>Credential in PSCredential type</maml:para>
+            <maml:para>Credential in PSCredential type.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
           <dev:type>
@@ -67,7 +67,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
           <maml:name>Server</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node.</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -101,7 +101,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="P">
           <maml:name>Password</maml:name>
           <maml:Description>
-            <maml:para>Password for login. E.g. admin</maml:para>
+            <maml:para>Password for login.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
           <dev:type>
@@ -113,7 +113,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="U">
           <maml:name>UserName</maml:name>
           <maml:Description>
-            <maml:para>User Name for login. E.g. admin</maml:para>
+            <maml:para>User Name for login.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -140,7 +140,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="C">
         <maml:name>Credential</maml:name>
         <maml:Description>
-          <maml:para>Credential in PSCredential type</maml:para>
+          <maml:para>Credential in PSCredential type.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
         <dev:type>
@@ -164,7 +164,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="P">
         <maml:name>Password</maml:name>
         <maml:Description>
-          <maml:para>Password for login. E.g. admin</maml:para>
+          <maml:para>Password for login.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
         <dev:type>
@@ -176,7 +176,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
         <maml:name>Server</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node.</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -188,7 +188,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="U">
         <maml:name>UserName</maml:name>
         <maml:Description>
-          <maml:para>User Name for login. E.g. admin</maml:para>
+          <maml:para>User Name for login.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -244,7 +244,15 @@
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts</dev:code>
         <dev:remarks>
-          <maml:para>To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. Pasword can be stored with following command. Replace 'adminpassword' with your real admin password string $Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force</maml:para>
+          <maml:para>To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. The $Secure value can be created with ConvertTo-SecureString like following. Replace 'adminpassword' with your real admin password string</maml:para>
+          <maml:para>$Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Connect-PrismCentral -Server 10.36.240.21 -Credential $Cred -AcceptInvalidSSLCerts</dev:code>
+        <dev:remarks>
+          <maml:para>To Connect to Prism Central IP 10.36.240.21 with credentials. $Cred can be created as following. $Cred = New-Object System.Management.Automation.PSCredential("admin", $Secure) and the $Secure can be created as same way as Example 1.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

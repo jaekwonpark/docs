@@ -25,7 +25,7 @@ Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInval
 ```
 
 ## DESCRIPTION
-Connect to Prism Central IP or Hostname
+Connect to Prism Central IP or Hostname. To connect multiple Prism Central, repeat this command with different IP or Hostname. To disconnect a Prism Central, use Disconnect-PrismCentral with -Server. To disconnect all, use * for -Server value. The session is valid for 15 minutes from last access to the Prism Central.
 
 ## EXAMPLES
 
@@ -34,8 +34,19 @@ Connect to Prism Central IP or Hostname
 PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts
 ```
 
-To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. Pasword can be stored with following command. Replace 'adminpassword' with your real admin password string
+To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. The $Secure value can be created with ConvertTo-SecureString like following. Replace 'adminpassword' with your real admin password string
+
 $Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force
+
+### Example 2
+```powershell
+PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Credential $Cred -AcceptInvalidSSLCerts
+```
+
+To Connect to Prism Central IP 10.36.240.21 with credentials. $Cred can be created as following.
+$Cred = New-Object System.Management.Automation.PSCredential("admin", $Secure)
+and the $Secure can be created as same way as Example 1.
+
 
 ## PARAMETERS
 
@@ -55,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Credential in PSCredential type
+Credential in PSCredential type.
 
 ```yaml
 Type: PSCredential
@@ -86,8 +97,6 @@ Accept wildcard characters: False
 
 ### -Password
 Password for login.
-E.g.
-admin
 
 ```yaml
 Type: SecureString
@@ -102,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
-Name or IP address of Nutanix node.
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String
@@ -118,8 +127,6 @@ Accept wildcard characters: False
 
 ### -UserName
 User Name for login.
-E.g.
-admin
 
 ```yaml
 Type: String
