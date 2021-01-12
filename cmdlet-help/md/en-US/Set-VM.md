@@ -14,22 +14,16 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-Set-VM -Vmid <Object> [-VmLogicalTimestamp <Int64>] [-Uuid <String>] [-Name <String>] [-Description <String>]
- [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>] [-MemoryMb <Int64>] [-Boot <BootConfigDTO>]
- [-Timezone <String>] [-HaPriority <Int64>] [[-Servers] <String[]>] [-ExpandedOutput] [-GridView]
- [<CommonParameters>]
+Set-VM -Uuid <String> -ClusterName <String> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>]
+ [-NumCoresPerVcpu <Int64>] [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
+ [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
+### AltServer
 ```
-Set-VM [-Vmid <Object>] [-VmLogicalTimestamp <Int64>] [-Uuid <String>] [-Name <String>] [-Description <String>]
- [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>] [-MemoryMb <Int64>] [-Boot <BootConfigDTO>]
- [-Timezone <String>] [-HaPriority <Int64>] [-Template] [-ExpandedOutput] [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Set-VM [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Set-VM -Uuid <String> -ClusterUUID <String> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>]
+ [-NumCoresPerVcpu <Int64>] [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
+ [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,10 +57,40 @@ Accept wildcard characters: False
 
 ```yaml
 Type: BootConfigDTO
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClusterName
+{{ Fill ClusterName Description }}
+
+```yaml
+Type: String
+Parameter Sets: Server
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClusterUUID
+{{ Fill ClusterUUID Description }}
+
+```yaml
+Type: String
+Parameter Sets: AltServer
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -90,64 +114,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HaPriority
-{{ Fill HaPriority Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
@@ -174,7 +141,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
@@ -201,7 +168,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
@@ -228,7 +195,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
@@ -255,28 +222,13 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -285,26 +237,11 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
 Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Template
-Template of the object to be provided as input.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -327,7 +264,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
 Required: False
@@ -342,34 +279,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Vmid
-{{ Fill Vmid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -379,57 +289,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -VmLogicalTimestamp
-{{ Fill VmLogicalTimestamp Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.Object
-### System.Int64
 ### System.String
+### System.Int64
 ### Nutanix.Prism.DTO.Acropolis.BootConfigDTO
-### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

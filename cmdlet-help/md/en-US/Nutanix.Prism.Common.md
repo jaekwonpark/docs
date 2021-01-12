@@ -2,7 +2,7 @@
 Module Name: Nutanix.Prism.Common
 Module Guid: 90f6d4c4-e5b2-4ce4-9d79-6b6afefe9aa6
 Download Help Link: https://raw.githubusercontent.com/jaekwonpark/docs/master/cmdlet-help/
-Help Version: 0.0.0.29
+Help Version: 0.0.0.30
 Locale: en-US
 ---
 
@@ -13,6 +13,9 @@ Nutanix Common Module
 ## Nutanix.Prism.Common Cmdlets
 ### [Connect-PrismCentral](Connect-PrismCentral.md)
 Connects to Prism Central
+
+### [Disconnect-PrismCentral](Disconnect-PrismCentral.md)
+{{ Fill in the Synopsis }}
 
 ### [Get-Cluster](Get-Cluster.md)
 {{ Fill in the Synopsis }}

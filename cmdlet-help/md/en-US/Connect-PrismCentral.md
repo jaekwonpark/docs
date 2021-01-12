@@ -12,9 +12,16 @@ Connects to Prism Central
 
 ## SYNTAX
 
+### Pswd
 ```
 Connect-PrismCentral [-Server] <String> -UserName <String> -Password <SecureString> [-AcceptInvalidSSLCerts]
  [-ForcedConnection] [<CommonParameters>]
+```
+
+### Cred
+```
+Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInvalidSSLCerts] [-ForcedConnection]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,6 +54,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Credential
+Credential in PSCredential type
+
+```yaml
+Type: PSCredential
+Parameter Sets: Cred
+Aliases: C
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ForcedConnection
 If set then it forcefully connects by skipping the version mismatch check.
 
@@ -69,7 +91,7 @@ admin
 
 ```yaml
 Type: SecureString
-Parameter Sets: (All)
+Parameter Sets: Pswd
 Aliases: P
 
 Required: True
@@ -101,7 +123,7 @@ admin
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Pswd
 Aliases: U
 
 Required: True

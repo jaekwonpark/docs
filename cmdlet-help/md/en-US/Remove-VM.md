@@ -14,17 +14,12 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-Remove-VM -Vmid <Object> [[-Servers] <String[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Remove-VM -Vmid <Object> -ClusterUUID <String> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
-Remove-VM [-Vmid <Object>] [-Template] [-ExpandedOutput] [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Remove-VM [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Remove-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,48 +36,30 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -ExpandedOutput
-Whether to print the output in list view.
+### -ClusterUUID
+{{ Fill ClusterUUID Description }}
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
+Type: String
+Parameter Sets: Server
+Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GridView
-Whether to show grid view or not.
-
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
+Type: String
+Parameter Sets: Template
 Aliases:
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -91,26 +68,11 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
 Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Template
-Template of the object to be provided as input.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -149,9 +111,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Object
-### System.Management.Automation.SwitchParameter
+### System.String
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

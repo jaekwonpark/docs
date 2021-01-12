@@ -15,20 +15,13 @@ schema: 2.0.0
 ### Server (Default)
 ```
 Get-VM [-Count <Int32>] [-FilterCriteria <Object>] [-SortCriteria <Object>] [-SearchString <Object>]
- [-SearchAttributeList <Object>] [-Page <Int32>] [-Projection <Object>] [-VmId <Object>]
- [[-Servers] <String[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+ [-SearchAttributeList <Object>] [-Page <Int32>] [-VmId <Object>] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
 Get-VM [-Count <Int32>] [-FilterCriteria <Object>] [-SortCriteria <Object>] [-SearchString <Object>]
- [-SearchAttributeList <Object>] [-Page <Int32>] [-Projection <Object>] [-VmId <Object>] [-ExpandedOutput]
- [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Get-VM [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+ [-SearchAttributeList <Object>] [-Page <Int32>] [-VmId <Object>] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +65,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -FilterCriteria
 {{ Fill FilterCriteria Description }}
 
@@ -109,36 +87,6 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -168,33 +116,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -Projection
-{{ Fill Projection Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -257,7 +178,7 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -329,8 +250,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Int32
 ### System.Object
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
-### System.Management.Automation.SwitchParameter
 ## OUTPUTS
 
 ### System.Object

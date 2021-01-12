@@ -14,21 +14,13 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-New-Image [-Name <String>] [-Uuid <String>] [-Annotation <String>] [-ImageType <ImageType_Enum>]
- [-ImageImportSpec <ImageImportSpecDTO>] [-VmDiskClone <VMDiskSpecCloneDTO>] [[-Servers] <String[]>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
+New-Image -Name <String> -ImageType <String> -SourceUri <String> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
-New-Image [-Name <String>] [-Uuid <String>] [-Annotation <String>] [-ImageType <ImageType_Enum>]
- [-ImageImportSpec <ImageImportSpecDTO>] [-VmDiskClone <VMDiskSpecCloneDTO>] [-Template] [-ExpandedOutput]
- [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-New-Image [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+New-Image [-Name <String>] [-ImageType <String>] [-SourceUri <String>] [[-Servers] <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,100 +37,16 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Annotation
-{{ Fill Annotation Description }}
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ImageImportSpec
-{{ Fill ImageImportSpec Description }}
-
-```yaml
-Type: ImageImportSpecDTO
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: ImageImportSpecDTO
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -ImageType
 {{ Fill ImageType Description }}
 
 ```yaml
-Type: ImageType_Enum
+Type: String
 Parameter Sets: Server
 Aliases:
 Accepted values: DISK_IMAGE, ISO_IMAGE
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -146,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: ImageType_Enum
+Type: String
 Parameter Sets: Template
 Aliases:
 Accepted values: DISK_IMAGE, ISO_IMAGE
@@ -166,7 +74,7 @@ Type: String
 Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -185,27 +93,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
 Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -215,30 +108,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Template
-Template of the object to be provided as input.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Uuid
-{{ Fill Uuid Description }}
+### -SourceUri
+{{ Fill SourceUri Description }}
 
 ```yaml
 Type: String
 Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -247,33 +125,6 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VmDiskClone
-{{ Fill VmDiskClone Description }}
-
-```yaml
-Type: VMDiskSpecCloneDTO
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: VMDiskSpecCloneDTO
 Parameter Sets: Template
 Aliases:
 
@@ -290,12 +141,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-### Nutanix.Prism.PS.Cmds.Acropolis.NewImage+ImageType_Enum
-### Nutanix.Prism.DTO.Acropolis.ImageImportSpecDTO
-### Nutanix.Prism.DTO.Acropolis.VMDiskSpecCloneDTO
-### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

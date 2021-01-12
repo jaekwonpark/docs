@@ -38,6 +38,55 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="C">
+          <maml:name>Credential</maml:name>
+          <maml:Description>
+            <maml:para>Credential in PSCredential type</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+          <dev:type>
+            <maml:name>PSCredential</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="F">
+          <maml:name>ForcedConnection</maml:name>
+          <maml:Description>
+            <maml:para>If set then it forcefully connects by skipping the version mismatch check.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Connect-PrismCentral</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
+          <maml:name>Server</maml:name>
+          <maml:Description>
+            <maml:para>Name or IP address of Nutanix node.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="A">
+          <maml:name>AcceptInvalidSSLCerts</maml:name>
+          <maml:Description>
+            <maml:para>Whether to accept invalid SSL certificates.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="F">
           <maml:name>ForcedConnection</maml:name>
           <maml:Description>
@@ -87,6 +136,18 @@
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="C">
+        <maml:name>Credential</maml:name>
+        <maml:Description>
+          <maml:para>Credential in PSCredential type</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+        <dev:type>
+          <maml:name>PSCredential</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="F">
         <maml:name>ForcedConnection</maml:name>
@@ -195,34 +256,19 @@
       <command:verb>Disconnect</command:verb>
       <command:noun>PrismCentral</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Disconnect from one or all of prism central hosts</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Disconnect from one or all of prism central hosts. use '*' as -Server parameter to disconnect all.</maml:para>
     </maml:description>
     <command:syntax>
-      <command:syntaxItem>
-        <maml:name>Disconnect-PrismCentral</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
-          <maml:name>NutanixClusters</maml:name>
-          <maml:Description>
-            <maml:para>{{ Fill NutanixClusters Description }}</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">NutanixCluster[]</command:parameterValue>
-          <dev:type>
-            <maml:name>NutanixCluster[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Disconnect-PrismCentral</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -234,22 +280,10 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
-        <maml:name>NutanixClusters</maml:name>
-        <maml:Description>
-          <maml:para>{{ Fill NutanixClusters Description }}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">NutanixCluster[]</command:parameterValue>
-        <dev:type>
-          <maml:name>NutanixCluster[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -295,9 +329,16 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Disconnect-PrismCentral -Servers 10.46.28.31</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Disconnects from Prism Central host 10.46.28.31</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Disconnect-PrismCentral -Servers *</dev:code>
+        <dev:remarks>
+          <maml:para>Disconnects from all Prism Central hosts</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

@@ -14,25 +14,23 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcpu <Int64>]
- [-VcpuReservationHz <Int64>] -MemoryMb <Int64> [-MemoryReservationMb <Int64>] [-Uuid <String>]
- [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [-HostId <String>] [-HypervisorType <Enum_Enum>]
- [-BootConfig <BootConfigDTO>] [-HaPriority <Int64>] [-VmCustomizationConfig <VMCustomizationConfigDTO>]
- [-ContainerUuid <String>] [[-Servers] <String[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcpu <Int64>] -MemoryMb <Int64>
+ -ClusterName <String> [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [-HypervisorType <Enum_Enum>]
+ [-BootConfig <BootConfigDTO>] [-VmCustomizationConfig <VMCustomizationConfigDTO>] [[-Servers] <String[]>]
+ [<CommonParameters>]
+```
+
+### AltServer
+```
+New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcpu <Int64>] -MemoryMb <Int64>
+ -ClusterUUID <String> [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [[-Servers] <String[]>]
+ [<CommonParameters>]
 ```
 
 ### Template
 ```
-New-VM [-Name <String>] [-Description <String>] [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>]
- [-VcpuReservationHz <Int64>] [-MemoryMb <Int64>] [-MemoryReservationMb <Int64>] [-Uuid <String>]
- [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [-HostId <String>] [-HypervisorType <Enum_Enum>]
- [-BootConfig <BootConfigDTO>] [-HaPriority <Int64>] [-VmCustomizationConfig <VMCustomizationConfigDTO>]
- [-ContainerUuid <String>] [-Template] [-ExpandedOutput] [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-New-VM [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+New-VM [-HypervisorType <Enum_Enum>] [-BootConfig <BootConfigDTO>]
+ [-VmCustomizationConfig <VMCustomizationConfigDTO>] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,27 +74,30 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ContainerUuid
-{{ Fill ContainerUuid Description }}
+### -ClusterName
+{{ Fill ClusterName Description }}
 
 ```yaml
 Type: String
 Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ClusterUUID
+{{ Fill ClusterUUID Description }}
+
 ```yaml
 Type: String
-Parameter Sets: Template
+Parameter Sets: AltServer
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -108,103 +109,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HaPriority
-{{ Fill HaPriority Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HostId
-{{ Fill HostId Description }}
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: False
@@ -248,49 +153,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Server
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -MemoryReservationMb
-{{ Fill MemoryReservationMb Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -302,22 +168,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: Server
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -329,19 +183,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: False
@@ -356,7 +198,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Server
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: True
@@ -366,112 +208,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
 Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
 Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Template
-Template of the object to be provided as input.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Uuid
-{{ Fill Uuid Description }}
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VcpuReservationHz
-{{ Fill VcpuReservationHz Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -509,19 +255,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: VMDiskDTO[]
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: VMDiskDTO[]
-Parameter Sets: Template
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: False
@@ -536,19 +270,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: VMNicSpecDTO[]
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: VMNicSpecDTO[]
-Parameter Sets: Template
+Parameter Sets: Server, AltServer
 Aliases:
 
 Required: False
@@ -570,9 +292,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Nutanix.Prism.PS.Cmds.Vmmanagement.NewVirtualMachine+Enum_Enum
 ### Nutanix.Prism.DTO.Acropolis.BootConfigDTO
 ### Nutanix.Prism.DTO.Acropolis.VMCustomizationConfigDTO
-### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

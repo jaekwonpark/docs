@@ -14,19 +14,12 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-Start-VM -Vmid <Object> [-LogicalTimestamp <Int64>] [-HostUuid <String>] [[-Servers] <String[]>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Start-VM -Vmid <Object> -ClusterUUID <String> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
-Start-VM [-Vmid <Object>] [-LogicalTimestamp <Int64>] [-HostUuid <String>] [-Template] [-ExpandedOutput]
- [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Start-VM [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Start-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,45 +36,15 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HostUuid
-{{ Fill HostUuid Description }}
+### -ClusterUUID
+{{ Fill ClusterUUID Description }}
 
 ```yaml
 Type: String
 Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -97,48 +60,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -LogicalTimestamp
-{{ Fill LogicalTimestamp Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -147,26 +68,11 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
 Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Template
-Template of the object to be provided as input.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -205,11 +111,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Object
-### System.Int64
 ### System.String
-### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

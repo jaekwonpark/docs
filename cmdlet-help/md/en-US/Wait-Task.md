@@ -14,19 +14,19 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-Wait-Task -Taskid <Object> [-Timeoutseconds <Int64>] [-IncludeEntityNames] [[-Servers] <String[]>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Wait-Task -TaskIDs <System.Collections.Generic.List`1[System.String]> [-Timeoutseconds <Int64>]
+ [-IncludeEntityNames] [[-Servers] <String[]>] [<CommonParameters>]
+```
+
+### Pipe
+```
+Wait-Task -TaskIDDTOs <System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]>
+ [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
-Wait-Task [-Taskid <Object>] [-Timeoutseconds <Int64>] [-IncludeEntityNames] [-ExpandedOutput] [-GridView]
- [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Wait-Task [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Wait-Task [-Timeoutseconds <Int64>] [-IncludeEntityNames] [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,36 +42,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -IncludeEntityNames
 {{ Fill IncludeEntityNames Description }}
@@ -100,27 +70,12 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
 Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -130,12 +85,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Taskid
-{{ Fill Taskid Description }}
+### -TaskIDDTOs
+{{ Fill TaskIDDTOs Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: Server
+Type: System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]
+Parameter Sets: Pipe
 Aliases:
 
 Required: True
@@ -145,15 +100,18 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -TaskIDs
+{{ Fill TaskIDs Description }}
+
 ```yaml
-Type: Object
-Parameter Sets: Template
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,11 +147,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object
+### System.Collections.Generic.List`1[[Nutanix.Prism.DTO.Acropolis.TaskIdDTO, Nutanix.Prism.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ### System.Int64
 ### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

@@ -14,19 +14,14 @@ schema: 2.0.0
 
 ### Server (Default)
 ```
-Get-Metric -Metrics <Object> -StartTimeInUsecs <Int64> -EndTimeInUsecs <Int64> -IntervalInSecs <Int32>
- [[-Servers] <String[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Get-Metric -ClusterName <String> -Metrics <String> -StartTimeSecsAgo <Int64> -EndTimeSecsAgo <Int64>
+ -IntervalInSecs <Int32> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
+### AltServer
 ```
-Get-Metric [-Metrics <Object>] [-StartTimeInUsecs <Int64>] [-EndTimeInUsecs <Int64>] [-IntervalInSecs <Int32>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Get-Metric [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+Get-Metric -ClusterName <String> -Metrics <String> -StartTimeInUsecs <Int64> -EndTimeInUsecs <Int64>
+ -IntervalInSecs <Int32> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,8 +38,38 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### -ClusterName
+{{ Fill ClusterName Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -EndTimeInUsecs
 {{ Fill EndTimeInUsecs Description }}
+
+```yaml
+Type: Int64
+Parameter Sets: AltServer
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -EndTimeSecsAgo
+{{ Fill EndTimeSecsAgo Description }}
 
 ```yaml
 Type: Int64
@@ -55,48 +80,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -105,22 +88,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int32
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int32
-Parameter Sets: Template
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
@@ -131,39 +102,12 @@ Accept wildcard characters: False
 {{ Fill Metrics Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: Server
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -174,7 +118,7 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -189,7 +133,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Int64
-Parameter Sets: Server
+Parameter Sets: AltServer
 Aliases:
 
 Required: True
@@ -199,12 +143,15 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -StartTimeSecsAgo
+{{ Fill StartTimeSecsAgo Description }}
+
 ```yaml
 Type: Int64
-Parameter Sets: Template
+Parameter Sets: Server
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
@@ -216,12 +163,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object
+### System.String
 ### System.Int64
 ### System.Int32
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
-### System.Management.Automation.SwitchParameter
 ## OUTPUTS
 
 ### System.Object

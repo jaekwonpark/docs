@@ -15,18 +15,13 @@ schema: 2.0.0
 ### Server (Default)
 ```
 Get-Image [-ImageId <Object>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths] [[-Servers] <String[]>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Template
 ```
-Get-Image [-ImageId <Object>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths] [-ExpandedOutput] [-GridView]
+Get-Image [-ImageId <Object>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths] [[-Servers] <String[]>]
  [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Get-Image [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,36 +37,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -ImageId
 {{ Fill ImageId Description }}
@@ -154,27 +119,12 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
 Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -192,7 +142,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Object
 ### System.Management.Automation.SwitchParameter
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Disconnect-PrismCentral
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Disconnect from one or all of prism central hosts
 
 ## SYNTAX
 
@@ -17,42 +17,29 @@ schema: 2.0.0
 Disconnect-PrismCentral [-Servers] <String[]> [<CommonParameters>]
 ```
 
-### NutanixCluster
-```
-Disconnect-PrismCentral [-NutanixClusters] <NutanixCluster[]> [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Disconnect from one or all of prism central hosts. use '*' as -Server parameter to disconnect all.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Disconnect-PrismCentral -Servers 10.46.28.31
 ```
 
-{{ Add example description here }}
+Disconnects from Prism Central host 10.46.28.31
+
+### Example 2
+```powershell
+PS C:\> Disconnect-PrismCentral -Servers *
+```
+
+Disconnects from all Prism Central hosts
 
 ## PARAMETERS
 
-### -NutanixClusters
-{{ Fill NutanixClusters Description }}
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Servers
-Name or IP address of Nutanix node
+Name or IP address of Prism Central
 
 ```yaml
 Type: String[]

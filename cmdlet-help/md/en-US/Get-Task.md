@@ -16,19 +16,14 @@ schema: 2.0.0
 ```
 Get-Task [-Taskid <Object>] [-IncludeEntityNames] [-EntityTypes <Object>] [-EntityUuids <Object>]
  [-OperationTypeList <Object>] [-IncludeCompleted] [-EpochCutOffTime <Int64>] [-Count <Int32>]
- [[-Servers] <String[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+ [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
 ### Template
 ```
 Get-Task [-Taskid <Object>] [-IncludeEntityNames] [-EntityTypes <Object>] [-EntityUuids <Object>]
- [-OperationTypeList <Object>] [-IncludeCompleted] [-EpochCutOffTime <Int64>] [-Count <Int32>]
- [-ExpandedOutput] [-GridView] [<CommonParameters>]
-```
-
-### NutanixCluster
-```
-Get-Task [[-NutanixClusters] <NutanixCluster[]>] [-ExpandedOutput] [-GridView] [<CommonParameters>]
+ [-OperationTypeList <Object>] [-EpochCutOffTime <Int64>] [-Count <Int32>] [[-Servers] <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,54 +148,12 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -ExpandedOutput
-Whether to print the output in list view.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -GridView
-Whether to show grid view or not.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: Grid
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -IncludeCompleted
 {{ Fill IncludeCompleted Description }}
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Template
 Aliases:
 
 Required: False
@@ -237,21 +190,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -NutanixClusters
-Nutanix cluster object.
-
-```yaml
-Type: NutanixCluster[]
-Parameter Sets: NutanixCluster
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -OperationTypeList
 {{ Fill OperationTypeList Description }}
 
@@ -284,7 +222,7 @@ Name or IP address of Nutanix node
 
 ```yaml
 Type: String[]
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases: S
 
 Required: False
@@ -331,7 +269,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Int64
 ### System.Int32
 ### System.String[]
-### Nutanix.Prism.Common.NutanixCluster[]
 ## OUTPUTS
 
 ### System.Object
