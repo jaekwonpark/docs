@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-Image
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Creates a new Image
 
 ## SYNTAX
 
@@ -24,21 +24,21 @@ New-Image [-Name <String>] [-ImageType <String>] [-SourceUri <String>] [[-Server
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new image
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> New-Image -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2 | ConvertTo-Json
 ```
 
-{{ Add example description here }}
+Creates a new image by downloading from -SourceUri
 
 ## PARAMETERS
 
 ### -ImageType
-{{ Fill ImageType Description }}
+Either DISK_IMAGE or ISO_IMAGE
 
 ```yaml
 Type: String
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+Image name
 
 ```yaml
 Type: String
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceUri
-{{ Fill SourceUri Description }}
+Uri to download the image from
 
 ```yaml
 Type: String

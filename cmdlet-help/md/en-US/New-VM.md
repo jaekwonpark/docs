@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Creates a new VM
 
 ## SYNTAX
 
@@ -27,28 +27,22 @@ New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcp
  [<CommonParameters>]
 ```
 
-### Template
-```
-New-VM [-HypervisorType <Enum_Enum>] [-BootConfig <BootConfigDTO>]
- [-VmCustomizationConfig <VMCustomizationConfigDTO>] [[-Servers] <String[]>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new VM
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> New-VM -Name testvm3 -NumVcpus 1 -MemoryMb 1000 -ClusterUUID 0005b78a-d520-bf4b-0000-0000000097fe
 ```
 
-{{ Add example description here }}
+Creates a new VM in given cluster by -ClusterUUID
 
 ## PARAMETERS
 
 ### -BootConfig
-{{ Fill BootConfig Description }}
+BootConfigDTO type of object
 
 ```yaml
 Type: BootConfigDTO
@@ -75,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterName
-{{ Fill ClusterName Description }}
+Cluster name. you can use either -ClusterName or -ClusterUUID
 
 ```yaml
 Type: String
@@ -90,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterUUID
-{{ Fill ClusterUUID Description }}
+Cluster UUID. you can use either -ClusterUUID or -ClusterName
 
 ```yaml
 Type: String
@@ -105,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-{{ Fill Description Description }}
+Description
 
 ```yaml
 Type: String
@@ -120,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -HypervisorType
-{{ Fill HypervisorType Description }}
+Hyperviser type
 
 ```yaml
 Type: Enum_Enum
@@ -149,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemoryMb
-{{ Fill MemoryMb Description }}
+Memory size in MB
 
 ```yaml
 Type: Int64
@@ -164,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+VM name
 
 ```yaml
 Type: String
@@ -179,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumCoresPerVcpu
-{{ Fill NumCoresPerVcpu Description }}
+Number of cores per VCPU
 
 ```yaml
 Type: Int64
@@ -194,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumVcpus
-{{ Fill NumVcpus Description }}
+Number of VCPUs
 
 ```yaml
 Type: Int64
@@ -209,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -224,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -VmCustomizationConfig
-{{ Fill VmCustomizationConfig Description }}
+
 
 ```yaml
 Type: VMCustomizationConfigDTO
@@ -251,7 +245,6 @@ Accept wildcard characters: False
 ```
 
 ### -VmDisks
-{{ Fill VmDisks Description }}
 
 ```yaml
 Type: VMDiskDTO[]
@@ -266,7 +259,6 @@ Accept wildcard characters: False
 ```
 
 ### -VmNics
-{{ Fill VmNics Description }}
 
 ```yaml
 Type: VMNicSpecDTO[]

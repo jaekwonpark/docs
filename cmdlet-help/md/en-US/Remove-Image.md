@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-Image
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Remove an image
 
 ## SYNTAX
 
@@ -17,27 +17,22 @@ schema: 2.0.0
 Remove-Image -ImageId <Object> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
-```
-Remove-Image [-ImageId <Object>] [[-Servers] <String[]>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Removes an image
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Remove-Image -ImageId 25a2a7dc-cf26-4cb7-8bfb-f103fdfcd2d1
 ```
 
-{{ Add example description here }}
+Removes the image with given image id by -ImageId
 
 ## PARAMETERS
 
 ### -ImageId
-{{ Fill ImageId Description }}
+Image UUID
 
 ```yaml
 Type: Object

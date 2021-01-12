@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-VM
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Remove VM
 
 ## SYNTAX
 
@@ -17,27 +17,22 @@ schema: 2.0.0
 Remove-VM -Vmid <Object> -ClusterUUID <String> [[-Servers] <String[]>] [<CommonParameters>]
 ```
 
-### Template
-```
-Remove-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-{{ Fill in the Description }}
+Remove the VM
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Remove-VM -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f
 ```
 
-{{ Add example description here }}
+Example removes a VM from the cluster
 
 ## PARAMETERS
 
 ### -ClusterUUID
-{{ Fill ClusterUUID Description }}
+You can specify either cluster UUID or cluster name via -ClusterName parameter
 
 ```yaml
 Type: String
@@ -64,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Host name or IP address of Prism Central
 
 ```yaml
 Type: String[]
@@ -78,8 +73,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Vmid
-{{ Fill Vmid Description }}
+### -Uuid
+UUID of the VM
+
 
 ```yaml
 Type: Object

@@ -1320,11 +1320,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>New</command:verb>
       <command:noun>Image</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Creates a new Image</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Creates a new image</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1332,7 +1332,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1344,7 +1344,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ImageType</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageType Description }}</maml:para>
+            <maml:para>Either DISK_IMAGE or ISO_IMAGE</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
@@ -1366,7 +1366,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>Image name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1378,7 +1378,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>SourceUri</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SourceUri Description }}</maml:para>
+            <maml:para>Uri to download the image from</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1393,7 +1393,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1405,7 +1405,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ImageType</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageType Description }}</maml:para>
+            <maml:para>Either DISK_IMAGE or ISO_IMAGE</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">DISK_IMAGE</command:parameterValue>
@@ -1427,7 +1427,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>Image name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1439,7 +1439,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>SourceUri</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill SourceUri Description }}</maml:para>
+            <maml:para>Uri to download the image from</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1454,7 +1454,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ImageType</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ImageType Description }}</maml:para>
+          <maml:para>Either DISK_IMAGE or ISO_IMAGE</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1466,7 +1466,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Name</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Name Description }}</maml:para>
+          <maml:para>Image name</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1478,7 +1478,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -1490,7 +1490,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>SourceUri</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill SourceUri Description }}</maml:para>
+          <maml:para>Uri to download the image from</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1536,9 +1536,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; New-Image -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2 | ConvertTo-Json</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Creates a new image by downloading from -SourceUri</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -1550,11 +1550,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>New</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Creates a new VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Creates a new VM</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1562,7 +1562,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1574,7 +1574,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>BootConfig</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill BootConfig Description }}</maml:para>
+            <maml:para>BootConfigDTO type of object</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
           <dev:type>
@@ -1586,7 +1586,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterName</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterName Description }}</maml:para>
+            <maml:para>Cluster name. you can use either -ClusterName or -ClusterUUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1598,7 +1598,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Description</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Description Description }}</maml:para>
+            <maml:para>Description</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1610,7 +1610,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>HypervisorType</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill HypervisorType Description }}</maml:para>
+            <maml:para>Hyperviser type</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
@@ -1656,7 +1656,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>MemoryMb</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+            <maml:para>Memory size in MB</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1668,7 +1668,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>VM name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1680,7 +1680,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumCoresPerVcpu</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+            <maml:para>Number of cores per VCPU</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1692,7 +1692,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumVcpus</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+            <maml:para>Number of VCPUs</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1704,7 +1704,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmCustomizationConfig</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmCustomizationConfig Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMCustomizationConfigDTO</command:parameterValue>
           <dev:type>
@@ -1716,7 +1716,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmDisks</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmDisks Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMDiskDTO[]</command:parameterValue>
           <dev:type>
@@ -1728,7 +1728,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmNics</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmNics Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMNicSpecDTO[]</command:parameterValue>
           <dev:type>
@@ -1743,7 +1743,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1755,7 +1755,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>BootConfig</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill BootConfig Description }}</maml:para>
+            <maml:para>BootConfigDTO type of object</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
           <dev:type>
@@ -1767,7 +1767,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>HypervisorType</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill HypervisorType Description }}</maml:para>
+            <maml:para>Hyperviser type</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">ACROPOLIS</command:parameterValue>
@@ -1813,7 +1813,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmCustomizationConfig</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmCustomizationConfig Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMCustomizationConfigDTO</command:parameterValue>
           <dev:type>
@@ -1828,7 +1828,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -1840,7 +1840,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>Cluster UUID. you can use either -ClusterUUID or -ClusterName</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1852,7 +1852,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Description</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Description Description }}</maml:para>
+            <maml:para>Description</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1864,7 +1864,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>MemoryMb</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+            <maml:para>Memory size in MB</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1876,7 +1876,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Name</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Name Description }}</maml:para>
+            <maml:para>VM name</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1888,7 +1888,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumCoresPerVcpu</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+            <maml:para>Number of cores per VCPU</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1900,7 +1900,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>NumVcpus</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+            <maml:para>Number of VCPUs</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
           <dev:type>
@@ -1912,7 +1912,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmDisks</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmDisks Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMDiskDTO[]</command:parameterValue>
           <dev:type>
@@ -1924,7 +1924,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>VmNics</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill VmNics Description }}</maml:para>
+            <maml:para></maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">VMNicSpecDTO[]</command:parameterValue>
           <dev:type>
@@ -1939,7 +1939,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>BootConfig</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill BootConfig Description }}</maml:para>
+          <maml:para>BootConfigDTO type of object</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">BootConfigDTO</command:parameterValue>
         <dev:type>
@@ -1951,7 +1951,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterName</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterName Description }}</maml:para>
+          <maml:para>Cluster name. you can use either -ClusterName or -ClusterUUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1963,7 +1963,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterUUID</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+          <maml:para>Cluster UUID. you can use either -ClusterUUID or -ClusterName</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1975,7 +1975,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Description</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Description Description }}</maml:para>
+          <maml:para>Description</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1987,7 +1987,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>HypervisorType</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill HypervisorType Description }}</maml:para>
+          <maml:para>Hyperviser type</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Enum_Enum</command:parameterValue>
         <dev:type>
@@ -1999,7 +1999,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>MemoryMb</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill MemoryMb Description }}</maml:para>
+          <maml:para>Memory size in MB</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -2011,7 +2011,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Name</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Name Description }}</maml:para>
+          <maml:para>VM name</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2023,7 +2023,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>NumCoresPerVcpu</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill NumCoresPerVcpu Description }}</maml:para>
+          <maml:para>Number of cores per VCPU</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -2035,7 +2035,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>NumVcpus</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill NumVcpus Description }}</maml:para>
+          <maml:para>Number of VCPUs</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
         <dev:type>
@@ -2047,7 +2047,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -2059,7 +2059,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>VmCustomizationConfig</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill VmCustomizationConfig Description }}</maml:para>
+          <maml:para></maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">VMCustomizationConfigDTO</command:parameterValue>
         <dev:type>
@@ -2071,7 +2071,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>VmDisks</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill VmDisks Description }}</maml:para>
+          <maml:para></maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">VMDiskDTO[]</command:parameterValue>
         <dev:type>
@@ -2083,7 +2083,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>VmNics</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill VmNics Description }}</maml:para>
+          <maml:para></maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">VMNicSpecDTO[]</command:parameterValue>
         <dev:type>
@@ -2177,9 +2177,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; New-VM -Name testvm3 -NumVcpus 1 -MemoryMb 1000 -ClusterUUID 0005b78a-d520-bf4b-0000-0000000097fe</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Creates a new VM in given cluster by -ClusterUUID</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2191,11 +2191,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Remove</command:verb>
       <command:noun>Image</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Remove an image</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Removes an image</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2215,7 +2215,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ImageId</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageId Description }}</maml:para>
+            <maml:para>Image UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -2242,7 +2242,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ImageId</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ImageId Description }}</maml:para>
+            <maml:para>Image UUID</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -2257,7 +2257,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>ImageId</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ImageId Description }}</maml:para>
+          <maml:para>Image UUID</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -2315,9 +2315,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Remove-Image -ImageId 25a2a7dc-cf26-4cb7-8bfb-f103fdfcd2d1</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Removes the image with given image id by -ImageId</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2329,11 +2329,11 @@ PC_Host : 10.46.28.31</dev:code>
       <command:verb>Remove</command:verb>
       <command:noun>VM</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Remove VM</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Remove the VM</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2341,7 +2341,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -2353,7 +2353,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>You can specify either cluster UUID or cluster name via -ClusterName parameter</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2363,9 +2363,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -2380,7 +2380,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:Description>
-            <maml:para>Name or IP address of Nutanix node</maml:para>
+            <maml:para>Host name or IP address of Prism Central</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -2392,7 +2392,7 @@ PC_Host : 10.46.28.31</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ClusterUUID</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+            <maml:para>You can specify either cluster UUID or cluster name via -ClusterName parameter</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2402,9 +2402,9 @@ PC_Host : 10.46.28.31</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-          <maml:name>Vmid</maml:name>
+          <maml:name>Uuid</maml:name>
           <maml:Description>
-            <maml:para>{{ Fill Vmid Description }}</maml:para>
+            <maml:para>UUID of the VM</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -2419,7 +2419,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ClusterUUID</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill ClusterUUID Description }}</maml:para>
+          <maml:para>You can specify either cluster UUID or cluster name via -ClusterName parameter</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2431,7 +2431,7 @@ PC_Host : 10.46.28.31</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:Description>
-          <maml:para>Name or IP address of Nutanix node</maml:para>
+          <maml:para>Host name or IP address of Prism Central</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -2441,9 +2441,9 @@ PC_Host : 10.46.28.31</dev:code>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
-        <maml:name>Vmid</maml:name>
+        <maml:name>Uuid</maml:name>
         <maml:Description>
-          <maml:para>{{ Fill Vmid Description }}</maml:para>
+          <maml:para>UUID of the VM</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -2497,9 +2497,9 @@ PC_Host : 10.46.28.31</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Remove-VM -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Example removes a VM from the cluster</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
