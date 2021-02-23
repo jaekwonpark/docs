@@ -1,8 +1,8 @@
 ﻿---
 Module Name: Nutanix.Prism.Common
 Module Guid: 90f6d4c4-e5b2-4ce4-9d79-6b6afefe9aa6
-Download Help Link: {{ Update Download Link }}
-Help Version: {{ Please enter version of help manually (X.X.X.X) format }}
+Download Help Link: https://raw.githubusercontent.com/jaekwonpark/docs/master/cmdlet-help/
+Help Version: 0.0.0.34
 Locale: en-US
 ---
 
