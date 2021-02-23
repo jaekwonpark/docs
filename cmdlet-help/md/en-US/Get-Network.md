@@ -5,53 +5,30 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-Image
+# Get-Network
 
 ## SYNOPSIS
-Displays the image info of specified uuid or all Images.
+Displays all networks available from the connected Prism Central.
 
 ## SYNTAX
 
 ```
-Get-Image [[-ImageId] <String>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths]
- [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+Get-Network [[-Servers] <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-If -ImangeId is given, displays the information of the specific image, otherwise, displays all images from the Prism Central. Any images that is added directly from Prism Element will not be displayed.
+Displays all networks available from the connected Prism Central. This is typically used to get network UUID to atttach to VM.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-Image  -ImageId 452f17c2-c1fb-46a8-bbec-2eb914b9b425
+PS C:\> Get-Network
 ```
 
-Displays the image infor of UUID 452f17c2-c1fb-46a8-bbec-2eb914b9b425
-
-### Example 2
-```powershell
-PS C:\> Get-Image  -ImageId 452f17c2-c1fb-46a8-bbec-2eb914b9b425 | ConvertTo-Json -Depth 3
-```
-
-Displays more details about the image in JSON format
+Displays all available networks from connected Prism Central.
 
 ## PARAMETERS
-
-### -ImageId
-Image UUID
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Servers
 Name or IP address of Prism Central
@@ -62,7 +39,7 @@ Parameter Sets: (All)
 Aliases: S
 
 Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -73,7 +50,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.SwitchParameter
 ### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 

@@ -5,93 +5,50 @@ online version:
 schema: 2.0.0
 ---
 
-# New-VM
+# Set-VM
 
 ## SYNOPSIS
-Creates a new VM
+Updates VM
 
 ## SYNTAX
 
 ### Server (Default)
 ```
-New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcpu <Int64>] -MemoryMb <Int64>
- -ClusterName <String> [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [-HypervisorType <Enum_Enum>]
- [-BootConfig <BootConfigDTO>] [-VmCustomizationConfig <VMCustomizationConfigDTO>] [[-Servers] <String[]>]
- [<CommonParameters>]
+Set-VM -Uuid <String> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>]
+ [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
-### AltServer
+### Alt1
 ```
-New-VM -Name <String> [-Description <String>] -NumVcpus <Int64> [-NumCoresPerVcpu <Int64>] -MemoryMb <Int64>
- -ClusterUUID <String> [-VmDisks <VMDiskDTO[]>] [-VmNics <VMNicSpecDTO[]>] [[-Servers] <String[]>]
- [<CommonParameters>]
+Set-VM -VmInfo <Info> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>]
+ [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates a new VM
+Updates the VM attributes.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> New-VM -Name testvm3 -NumVcpus 1 -MemoryMb 1000 -ClusterUUID 0005b78a-d520-bf4b-0000-0000000097fe
+PS C:\> Get-VM -Uuid $vmUuid | Set-VM -Name NewName | Wait-Task
 ```
 
-Creates a new VM in given cluster by -ClusterUUID
+Updates the name to NewName for the VM $vmUuid then waits for the task to be completed.
 
 ## PARAMETERS
 
-### -BootConfig
-BootConfigDTO type of object
+### -Boot
+BootConfig object to attach. Create using New-NutanixObject then assign values to each property.
 
 ```yaml
 Type: BootConfigDTO
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: BootConfigDTO
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ClusterName
-Cluster name. you can use either -ClusterName or -ClusterUUID
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ClusterUUID
-Cluster UUID. you can use either -ClusterUUID or -ClusterName
-
-```yaml
-Type: String
-Parameter Sets: AltServer
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -99,41 +56,12 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description
+Description of the VM
 
 ```yaml
 Type: String
-Parameter Sets: Server, AltServer
+Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -HypervisorType
-Hyperviser type
-
-```yaml
-Type: Enum_Enum
-Parameter Sets: Server
-Aliases:
-Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM, ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Enum_Enum
-Parameter Sets: Template
-Aliases:
-Accepted values: ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM, ACROPOLIS, NULL, AHV, HYPERV, VMWARE, XEN, ESX, KVM
 
 Required: False
 Position: Named
@@ -143,14 +71,14 @@ Accept wildcard characters: False
 ```
 
 ### -MemoryMb
-Memory size in MB
+Memory size in Mb
 
 ```yaml
 Type: Int64
-Parameter Sets: Server, AltServer
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -158,14 +86,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-VM name
+Name of the VM
 
 ```yaml
 Type: String
-Parameter Sets: Server, AltServer
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -173,11 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -NumCoresPerVcpu
-Number of cores per VCPU
+Number of cores per Vcpu
 
 ```yaml
 Type: Int64
-Parameter Sets: Server, AltServer
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -188,11 +116,42 @@ Accept wildcard characters: False
 ```
 
 ### -NumVcpus
-Number of VCPUs
+
+Number of Vcpu
 
 ```yaml
 Type: Int64
-Parameter Sets: Server, AltServer
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Servers
+Name or IP address of Prism Central
+
+```yaml
+Type: System.Collections.Generic.HashSet`1[System.String]
+Parameter Sets: (All)
+Aliases: S
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Uuid
+UUID of the VM
+
+```yaml
+Type: String
+Parameter Sets: Server
 Aliases:
 
 Required: True
@@ -202,70 +161,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Servers
-Host name or IP address of Prism Central
+### -VmInfo
+VM info object. Typically this is to be used for pipeline input from `Get-VM`, such as, Get-VM -Uuid $vmUuid | Set-VM -Name NewName
 
 ```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: S
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VmCustomizationConfig
-
-
-```yaml
-Type: VMCustomizationConfigDTO
-Parameter Sets: Server
+Type: Info
+Parameter Sets: Alt1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: VMCustomizationConfigDTO
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VmDisks
-
-```yaml
-Type: VMDiskDTO[]
-Parameter Sets: Server, AltServer
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VmNics
-
-```yaml
-Type: VMNicSpecDTO[]
-Parameter Sets: Server, AltServer
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -278,13 +182,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
+### Nutanix.Prism.Data.Vm.Info
 ### System.Int64
-### Nutanix.Prism.DTO.Acropolis.VMDiskDTO[]
-### Nutanix.Prism.DTO.Acropolis.VMNicSpecDTO[]
-### Nutanix.Prism.PS.Cmds.Vmmanagement.NewVirtualMachine+Enum_Enum
 ### Nutanix.Prism.DTO.Acropolis.BootConfigDTO
-### Nutanix.Prism.DTO.Acropolis.VMCustomizationConfigDTO
-### System.String[]
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

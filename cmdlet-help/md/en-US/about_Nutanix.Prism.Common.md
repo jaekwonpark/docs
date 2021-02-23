@@ -1,5 +1,5 @@
-# Nutanix.Prism.Common
-## about_Nutanix.Prism.Common
+# nutanix_common
+## about_nutanix_common
 
 ```
 ABOUT TOPIC NOTE:

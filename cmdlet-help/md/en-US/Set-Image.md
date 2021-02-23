@@ -8,31 +8,31 @@ schema: 2.0.0
 # Set-Image
 
 ## SYNOPSIS
-Updates attributes of given image uuid
+Updates the image.
 
 ## SYNTAX
 
 ```
-Set-Image -Spec <Spec> -MetaData <MetaData> [-Name <String>] [-ImageType <String>] [-Description <String>]
- [[-Servers] <String[]>] [<CommonParameters>]
+Set-Image -Spec <Spec> -MetaData <EntityMetadata> [-Name <String>] [-ImageType <String>]
+ [-Description <String>] [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates attributes of given image uuid
+Updates the attributees of given image.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-Image -ImageId $imageUUID | Set-Image -Name NewName | Wait-Task
 ```
 
-{{ Add example description here }}
+Changes the name of $imageUUID to NewName then wait for the task is completed. The output of Get-Image will contain the metadata and spec for the image, so the Set-Image will use them for updating the image.
 
 ## PARAMETERS
 
 ### -Description
-{{ Fill Description Description }}
+Description of the image
 
 ```yaml
 Type: String
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImageType
-{{ Fill ImageType Description }}
+Type of the image. It can be either DISK_IMAGE or ISO_IMAGE
 
 ```yaml
 Type: String
@@ -63,10 +63,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetaData
-{{ Fill MetaData Description }}
+Metadata for the image to be updated. Typically, if used with `Get-Image`, it will automaticaly pick up the metadata from the output of Get-Image.
 
 ```yaml
-Type: MetaData
+Type: EntityMetadata
 Parameter Sets: (All)
 Aliases:
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+Name of the image
 
 ```yaml
 Type: String
@@ -93,22 +93,22 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Nutanix node
+Name or IP address of Prism Central
 
 ```yaml
-Type: String[]
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: (All)
 Aliases: S
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Spec
-{{ Fill Spec Description }}
+Spec of the image to be updated. Typically, if used with `Get-Image`, it will automaticaly pick up the spec from the output of Get-Image.
 
 ```yaml
 Type: Spec
@@ -127,9 +127,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Nutanix.Prism.DTO.Acropolis.Spec
-### Nutanix.Prism.DTO.Acropolis.MetaData
-### System.String[]
+### Nutanix.Prism.DTO.V3.Spec
+### Nutanix.Prism.DTO.V3.EntityMetadata
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

@@ -8,66 +8,46 @@ schema: 2.0.0
 # Remove-VM
 
 ## SYNOPSIS
-Remove VM
+Removes a VM
 
 ## SYNTAX
 
-### Server (Default)
 ```
-Remove-VM -Vmid <Object> -ClusterUUID <String> [[-Servers] <String[]>] [<CommonParameters>]
+Remove-VM [-Uuid] <String> [-Servers <System.Collections.Generic.HashSet`1[System.String]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Remove the VM
+Removes a VM. If `-Server` is not given, it will look for all connected Prism Central and removes it.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Remove-VM -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f
+PS C:\> Remove-VM  5b25f68b-fe73-4cdc-88bf-a5485dff1627
 ```
 
-Example removes a VM from the cluster
+Find the UUID from connected Prism Central and removes it.
+
+### Example 2
+```powershell
+PS C:\> Remove-VM -Server 10.46.28.27 5b25f68b-fe73-4cdc-88bf-a5485dff1627
+```
+
+Find the UUID from Prism Central 10.46.28.27 then removes it. It will remove only if the VM is in the Prism Central 10.46.28.27
 
 ## PARAMETERS
 
-### -ClusterUUID
-You can specify either cluster UUID or cluster name via -ClusterName parameter
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -Servers
-Host name or IP address of Prism Central
+Name or IP address of Prism Central
 
 ```yaml
-Type: String[]
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: (All)
 Aliases: S
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -76,26 +56,13 @@ Accept wildcard characters: False
 ### -Uuid
 UUID of the VM
 
-
 ```yaml
-Type: Object
-Parameter Sets: Server
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -106,9 +73,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object
 ### System.String
-### System.String[]
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

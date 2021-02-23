@@ -8,48 +8,104 @@ schema: 2.0.0
 # Get-Metric
 
 ## SYNOPSIS
-Returns metric of the cluster for given time period
+Displays a metric of the cluster for given time period.
 
 ## SYNTAX
 
 ### Server (Default)
 ```
-Get-Metric -ClusterName <String> -Metrics <String> -StartTimeSecsAgo <Int64> -EndTimeSecsAgo <Int64>
- -IntervalInSecs <Int32> [[-Servers] <String[]>] [<CommonParameters>]
+Get-Metric [-ClusterName] <String> [-Metrics] <String> -StartTimeSecsAgo <Int64> -EndTimeSecsAgo <Int64>
+ -IntervalInSecs <Int32> [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
-### AltServer
+### Alt1
 ```
-Get-Metric -ClusterName <String> -Metrics <String> -StartTimeInUsecs <Int64> -EndTimeInUsecs <Int64>
- -IntervalInSecs <Int32> [[-Servers] <String[]>] [<CommonParameters>]
+Get-Metric [-ClusterUuid] <String> [-Metrics] <String> -StartTimeSecsAgo <Int64> -EndTimeSecsAgo <Int64>
+ -IntervalInSecs <Int32> [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt3
+```
+Get-Metric [-ClusterUuid] <String> [-Metrics] <String> -IntervalInSecs <Int32>
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt2
+```
+Get-Metric [-ClusterName] <String> [-Metrics] <String> -IntervalInSecs <Int32>
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns metric of the cluster for given time period.
+Displays a metric of the cluster for given time period. To list all available metrics, try `Get-Help Get-Metric -Parameter Metrics`
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-Metric -Server 10.46.28.31 -ClusterName auto_cluster_prod_jae_park_1af4b03c80f7 -Metrics controller_num_iops -StartTimeSecsAgo 600 -EndTimeSecsAgo 0 -IntervalInSecs 60
+PS C:\>  Get-Metric -Server 10.46.28.31 -ClusterName mycluster -Metrics controller_num_iops -StartTimeSecsAgo 600 -EndTimeSecsAgo 0 -IntervalInSecs 60
 ```
 
-Example will show the metric controller_num_iops from 600 seconds ago till now with 60 seconds of interval from the cluster. To get cluster name use Get-Cluster command.
+Displays the metric controller_num_iops from 600 seconds ago till now with 60 seconds of interval from the cluster. To get cluster name use `Get-Cluster` command.
 
 ### Example 2
 ```powershell
-PS C:\> (Get-Metric -Server 10.46.28.31 -ClusterName auto_cluster_prod_jae_park_1af4b03c80f7 -Metrics controller_num_iops -StartTimeSecsAgo 600 -EndTimeSecsAgo 0 -IntervalInSecs 60).values
+PS C:\>  Get-Help Get-Metric -Parameter Metrics
 ```
-
-To get metric data only, as an input to post process or another pipe, use .values to the command like above.
+Displays all available metrics names
 
 ## PARAMETERS
 
 ### -ClusterName
-Clustername can be obtained by Get-Cluster command
+Cluster Name
 
 ```yaml
 Type: String
+Parameter Sets: Server, Alt2
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClusterUuid
+Cluster UUID
+
+```yaml
+Type: String
+Parameter Sets: Alt1, Alt3
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -EndTimeSecsAgo
+End time of the metric
+
+```yaml
+Type: Int64
+Parameter Sets: Server, Alt1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -IntervalInSecs
+Interval of the metric
+
+```yaml
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -60,53 +116,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -EndTimeInUsecs
-End unix time in micro seconds
-
-```yaml
-Type: Int64
-Parameter Sets: AltServer
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -EndTimeSecsAgo
-End time N seconds ago
-
-```yaml
-Type: Int64
-Parameter Sets: Server
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -IntervalInSecs
-Interval in seconds
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
 ### -Metrics
-Metric of interest. Available metrics name are \
+Metrics name. Available metrics name are \
   // Number of IO.\
   num_io 
 
@@ -134,14 +145,14 @@ Metric of interest. Available metrics name are \
   // sending data once very 10s, timespan is 10,000,000 usecs.\
   timespan_usecs 
 
-  // Transformed space usage is bytes after transformation (like compression,
+  // Transformed space usage is bytes after transformation (like compression,\
   // encryption etc).\
   total_transformed_usage_bytes 
 
-  // Transformed space usage before transformation.
+  // Transformed space usage before transformation.\
   total_untransformed_usage_bytes 
 
-  // The time span over which the stats reported by the Hypervisor are
+  // The time span over which the stats reported by the Hypervisor are\
   // recorded.\
   hypervisor_timespan_usecs 
 
@@ -187,10 +198,10 @@ Metric of interest. Available metrics name are \
   controller_total_read_io_time_usecs 
 
   // The time span which the stats is recorded. For example, if stargate is\
-  // sending data once very 10s, timespan is 10,000,000 usecs.
-  controller_timespan_usecs \
+  // sending data once very 10s, timespan is 10,000,000 usecs.\
+  controller_timespan_usecs 
 
-  // Transformed space usage is bytes after transformation (like compression,
+  // Transformed space usage is bytes after transformation (like compression,\
   // encryption etc).\
   controller_total_transformed_usage_bytes 
 
@@ -215,27 +226,29 @@ Metric of interest. Available metrics name are \
   // Average IO latency.\
   avg_io_latency_usecs 
 
-  // Average read IO latency. This is not available for VDisk, Disk, Node,
+  // Average read IO latency. This is not available for VDisk, Disk, Node,\
   // StoragePool and Cluster since Stargate does not have the stats.\
   avg_read_io_latency_usecs 
 
-  // Read IO percentage expressed in  parts per million. To get percentage,
+  // Read IO percentage expressed in  parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   read_io_ppm 
 
-  // Write IO percentage expressed in parts per million. To get percentage,
+  // Write IO percentage expressed in parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   write_io_ppm 
 
-  // Random IO percentage expressed in parts per million. To get percentage,
+  // Random IO percentage expressed in parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   random_io_ppm 
 
-  // Sequential IO percentage expressed in parts per million.To get
-  // percentage, the value should be divided by 1 million and multipled
+  // Sequential IO percentage expressed in parts per million. To get\
+  // percentage, the value should be divided by 1 million and multipled\
   // by 100.\
   seq_io_ppm 
 
+\
+\
   /* Hypervisor derived stats */
 
   // Number of writes as reported by the Hypervisor.\
@@ -259,7 +272,7 @@ Metric of interest. Available metrics name are \
   // Number of write IO per second.\
   num_write_iops 
 
-  // Average read IO latency. This is not available for VDisk, Disk, Node,
+  // Average read IO latency. This is not available for VDisk, Disk, Node,\
   // StoragePool and Cluster since Stargate does not have the stats.\
   avg_write_io_latency_usecs 
 
@@ -276,8 +289,10 @@ Metric of interest. Available metrics name are \
   hypervisor_read_io_bandwidth_kBps 
 
   // Number of write write IO per second reported by the Hypervisor.\
-  hypervisor_write_io_bandwidth_kBps 
+  hypervisor_write_io_bandwidth_kBps
 
+\
+\
   /* Controller derived stats */
 
   // Number of write IO.\
@@ -295,24 +310,24 @@ Metric of interest. Available metrics name are \
   // Average IO latency.\
   controller_avg_io_latency_usecs 
 
-  // Average read IO latency. This is not available for VDisk, Disk, Node,
+  // Average read IO latency. This is not available for VDisk, Disk, Node,\
   // StoragePool and Cluster since Stargate does not have the stats.\
   controller_avg_read_io_latency_usecs 
 
-  // Read IO percentage expressed in  parts per million. To get percentage,
+  // Read IO percentage expressed in  parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   controller_read_io_ppm 
 
-  // Write IO percentage expressed in parts per million. To get percentage,
+  // Write IO percentage expressed in parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   controller_write_io_ppm 
 
-  // Random IO percentage expressed in parts per million. To get percentage,
+  // Random IO percentage expressed in parts per million. To get percentage,\
   // the value should be divided by 1 million and multipled by 100.\
   controller_random_io_ppm 
 
-  // Sequential IO percentage expressed in parts per million.To get\
-  // percentage, the value should be divided by 1 million and multipled
+  // Sequential IO percentage expressed in parts per million. To get\
+  // percentage, the value should be divided by 1 million and multipled\
   // by 100.\
   controller_seq_io_ppm 
 
@@ -322,7 +337,7 @@ Metric of interest. Available metrics name are \
   // Number of write IO per second.\
   controller_num_write_iops 
 
-  // Average read IO latency. This is not available for VDisk, Disk, Node,
+  // Average read IO latency. This is not available for VDisk, Disk, Node,\
   // StoragePool and Cluster since Stargate does not have the stats.\
   controller_avg_write_io_latency_usecs 
 
@@ -338,61 +353,45 @@ Metric of interest. Available metrics name are \
   // Number of disk write IO per second reported by Stargate.\
   write_io_bandwidth_kBps 
 
-
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Servers
-Hostname or IP address of Prism Central
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: S
-
-Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StartTimeInUsecs
-Start unix time in micro seconds
+### -Servers
+Name or IP address of Prism Central
 
 ```yaml
-Type: Int64
-Parameter Sets: AltServer
-Aliases:
+Type: System.Collections.Generic.HashSet`1[System.String]
+Parameter Sets: (All)
+Aliases: S
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -StartTimeSecsAgo
-Start time N secods ago
+Start time of the metric
 
 ```yaml
 Type: Int64
-Parameter Sets: Server
+Parameter Sets: Server, Alt1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -404,7 +403,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.String
 ### System.Int64
 ### System.Int32
-### System.String[]
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

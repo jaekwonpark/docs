@@ -8,19 +8,24 @@ schema: 2.0.0
 # New-Image
 
 ## SYNOPSIS
-Creates a new Image
+Creates a new image
 
 ## SYNTAX
 
 ### Server (Default)
 ```
-New-Image -Name <String> -ImageType <String> -SourceUri <String> [[-Servers] <String[]>] [<CommonParameters>]
+New-Image -Servers <System.Collections.Generic.HashSet`1[System.String]> -Name <String> -ImageType <String>
+ -SourceUri <String> [<CommonParameters>]
 ```
 
-### Template
+### Alt1
 ```
-New-Image [-Name <String>] [-ImageType <String>] [-SourceUri <String>] [[-Servers] <String[]>]
- [<CommonParameters>]
+New-Image -ClusterUuid <String> -Name <String> -ImageType <String> -SourceUri <String> [<CommonParameters>]
+```
+
+### Alt2
+```
+New-Image -ClusterName <String> -Name <String> -ImageType <String> -SourceUri <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,21 +35,28 @@ Creates a new image
 
 ### Example 1
 ```powershell
-PS C:\> New-Image -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2 | ConvertTo-Json
+PS C:\> New-Image -Name testimage1 -ClusterName mycluster -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2
 ```
 
-Creates a new image by downloading from -SourceUri
+Creates a new image in cluster `mycluster`
+
+### Example 2
+```powershell
+PS C:\> New-Image -Servers 10.46.28.27 -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2
+```
+
+Creates a new image in Prisme Central 10.46.28.27. Prism Central will automatically select available cluster and creates the image.
+
 
 ## PARAMETERS
 
-### -ImageType
-Either DISK_IMAGE or ISO_IMAGE
+### -ClusterName
+Cluster name to create the image in
 
 ```yaml
 Type: String
-Parameter Sets: Server
+Parameter Sets: Alt2
 Aliases:
-Accepted values: DISK_IMAGE, ISO_IMAGE, DISK_IMAGE, ISO_IMAGE
 
 Required: True
 Position: Named
@@ -53,13 +65,31 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ClusterUuid
+Cluster UUID to create the image in
+
 ```yaml
 Type: String
-Parameter Sets: Template
+Parameter Sets: Alt1
 Aliases:
-Accepted values: DISK_IMAGE, ISO_IMAGE, DISK_IMAGE, ISO_IMAGE
 
-Required: False
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ImageType
+Image type. It can be either DISK_IMAGE or ISO_IMAGE
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+Accepted values: DISK_IMAGE, ISO_IMAGE
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -67,26 +97,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Image name
+Name of the image
 
 ```yaml
 Type: String
-Parameter Sets: Server
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -94,27 +112,12 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Host name or IP address of Prism Central
+Name or IP address of Prism Central
 
 ```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: S
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -SourceUri
-Uri to download the image from
-
-```yaml
-Type: String
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: Server
-Aliases:
+Aliases: S
 
 Required: True
 Position: Named
@@ -123,12 +126,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -SourceUri
+Source Uri of the image
+
 ```yaml
 Type: String
-Parameter Sets: Template
+Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -140,8 +146,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ### System.String
-### System.String[]
 ## OUTPUTS
 
 ### System.Object

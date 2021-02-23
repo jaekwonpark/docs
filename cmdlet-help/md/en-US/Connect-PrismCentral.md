@@ -12,16 +12,16 @@ Connects to Prism Central
 
 ## SYNTAX
 
+### Cred (Default)
+```
+Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInvalidSSLCerts] [-ForcedConnection]
+ [<CommonParameters>]
+```
+
 ### Pswd
 ```
 Connect-PrismCentral [-Server] <String> -UserName <String> -Password <SecureString> [-AcceptInvalidSSLCerts]
  [-ForcedConnection] [<CommonParameters>]
-```
-
-### Cred
-```
-Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInvalidSSLCerts] [-ForcedConnection]
- [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,10 +31,10 @@ Connect to Prism Central IP or Hostname. To connect multiple Prism Central, repe
 
 ### Example 1
 ```powershell
-PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCerts
+PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Username admin -Password $Secure -AcceptInvalidSSLCert
 ```
 
-To Connect to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignoore validatiion of certificate. The $Secure value can be created with ConvertTo-SecureString like following. Replace 'adminpassword' with your real admin password string
+Connects to Prism Central IP 10.36.240.21 as username admin and the password stored in $Secure as SecureString type and ignore validation of certificate. The $Secure value can be created with ConvertTo-SecureString like following. Replace 'adminpassword' with your real admin password string
 
 $Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force
 
@@ -43,14 +43,20 @@ $Secure=ConvertTo-SecureString adminpassword -AsPlainText -Force
 PS C:\> Connect-PrismCentral -Server 10.36.240.21 -Credential $Cred -AcceptInvalidSSLCerts
 ```
 
-To Connect to Prism Central IP 10.36.240.21 with credentials. $Cred can be created as following.
+Connects to Prism Central IP 10.36.240.21 with credentials. $Cred can be created as following.
+
 $Cred = New-Object System.Management.Automation.PSCredential("admin", $Secure)
 and the $Secure can be created as same way as Example 1.
 
+### Example 3
+```powershell
+PS C:\> Connect-PrismCentral -Server 10.36.240.21 -UserName admin -AcceptInvalidSSLCerts
+``` 
+Connects to Prism Central IP 10.36.240.21 with user name `admin`. This will prompt for password, so user can type the password to console.
 ## PARAMETERS
 
 ### -AcceptInvalidSSLCerts
-Whether to accept invalid SSL certificates.
+Whether to accept invalid SSL certificates. When you have a certificate that is not issued by the certificate authority and you trust the certificate, then use this option
 
 ```yaml
 Type: SwitchParameter
@@ -65,8 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Credential in PSCredential type.
-
+Credential in PSCredential type. To create a credential, run `$Cred = New-Object System.Management.Automation.PSCredential(<username>, $Secure)` where <username> is a string and $Secure is a SecureString type of a string. To create a secure string, run `$Secure=ConvertTo-SecureString <password> -AsPlainText -Force` where <password> is the password in raw text string.
 ```yaml
 Type: PSCredential
 Parameter Sets: Cred
@@ -95,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Password for login.
+Password for login. To create a secure string, run `$Secure=ConvertTo-SecureString <password> -AsPlainText -Force` where <password> is the password in raw text string, then use $Secure as the value of this parameter
 
 ```yaml
 Type: SecureString
@@ -110,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
-Host name or IP address of Prism Central
+Name or IP address of Prism Central.
 
 ```yaml
 Type: String

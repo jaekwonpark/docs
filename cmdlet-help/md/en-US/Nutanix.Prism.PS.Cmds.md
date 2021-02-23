@@ -1,16 +1,16 @@
 ﻿---
-Module Name: Nutanix.Prism.PS.Cmds
+Module Name: Nutanix.Prism.Ps.Cmds
 Module Guid: 425a79de-4a4d-4fc0-be1c-c6bc618099ea
-Download Help Link: https://raw.githubusercontent.com/jaekwonpark/docs/master/cmdlet-help/
-Help Version: 0.0.0.4
+Download Help Link: {{ Update Download Link }}
+Help Version: {{ Please enter version of help manually (X.X.X.X) format }}
 Locale: en-US
 ---
 
-# Nutanix.Prism.PS.Cmds Module
+# Nutanix.Prism.Ps.Cmds Module
 ## Description
 {{ Fill in the Description }}
 
-## Nutanix.Prism.PS.Cmds Cmdlets
+## Nutanix.Prism.Ps.Cmds Cmdlets
 ### [Get-Cluster](Get-Cluster.md)
 {{ Fill in the Description }}
 
@@ -18,6 +18,12 @@ Locale: en-US
 {{ Fill in the Description }}
 
 ### [Get-Metric](Get-Metric.md)
+{{ Fill in the Description }}
+
+### [Get-Network](Get-Network.md)
+{{ Fill in the Description }}
+
+### [Get-StorageContainer](Get-StorageContainer.md)
 {{ Fill in the Description }}
 
 ### [Get-Task](Get-Task.md)

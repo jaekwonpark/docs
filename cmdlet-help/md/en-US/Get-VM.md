@@ -8,24 +8,17 @@ schema: 2.0.0
 # Get-VM
 
 ## SYNOPSIS
-Returns a list of VM
+Displays a list of VM
 
 ## SYNTAX
 
-### Server (Default)
 ```
-Get-VM [-Count <Int32>] [-FilterCriteria <Object>] [-SortCriteria <Object>] [-SearchString <Object>]
- [-SearchAttributeList <Object>] [-Page <Int32>] [-VmId <Object>] [[-Servers] <String[]>] [<CommonParameters>]
-```
-
-### Template
-```
-Get-VM [-Count <Int32>] [-FilterCriteria <Object>] [-SortCriteria <Object>] [-SearchString <Object>]
- [-SearchAttributeList <Object>] [-Page <Int32>] [-VmId <Object>] [[-Servers] <String[]>] [<CommonParameters>]
+Get-VM [-Count <Int32>] [-Page <Int32>] [[-Name] <String>] [-PowerState <String>] [-Uuid <String>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retuns a list of VM with informations of VM
+Displays a list of VM from connected Prism Central
 
 ## EXAMPLES
 
@@ -34,152 +27,47 @@ Retuns a list of VM with informations of VM
 PS C:\> Get-VM
 ```
 
-Returns VM info of currently connected Prism Central
+Displays all VMs from connected Prism Central
+
+### Example 2
+```powershell
+PS C:\> Get-VM testvm
+```
+
+Displays all VMs that has `testvm` in VMs name.
+
+### Example 2
+```powershell
+PS C:\> Get-VM -PowerState ON
+```
+
+Displays all VMs with power state is ON.
+
 
 ## PARAMETERS
 
 ### -Count
-Number of VM to display per Prism Central that is connected
+Number of VMs to display
 
 ```yaml
 Type: Int32
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int32
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -FilterCriteria
-Filter list separated by ';', For example, 'is_cvm==0;power_state==on'
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Page
-Page to display
-
-```yaml
-Type: Int32
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int32
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -SearchAttributeList
-Search attribute list. Ex) vm_id, uuid, power_state, vm_name
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -SearchString
-String to search for given SearchAttributeList
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Servers
-Host name or IP address of Prism Central
-
-```yaml
-Type: String[]
 Parameter Sets: (All)
-Aliases: S
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name
+Displays one or more VMs that have the name contains given string
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: 0
@@ -188,58 +76,64 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SortCriteria
-Sort criteria. Ex) vm_id, uuid, power_state, vm_name
+### -Page
+Page of the list
 
 ```yaml
-Type: Object
-Parameter Sets: Server
+Type: Int32
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PowerState
+Displays the VMs with given power state. Available state is ON or OFF
+
 ```yaml
-Type: Object
-Parameter Sets: Template
+Type: String
+Parameter Sets: (All)
 Aliases:
+Accepted values: ON, OFF
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Servers
+Name or IP address of Prism Central
+
+```yaml
+Type: System.Collections.Generic.HashSet`1[System.String]
+Parameter Sets: (All)
+Aliases: S
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Uuid
-UUID of VM
-
+UUID of the VM
 
 ```yaml
-Type: Object
-Parameter Sets: Server
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Object
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -249,8 +143,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Int32
-### System.Object
-### System.String[]
+### System.String
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

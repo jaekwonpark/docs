@@ -1,53 +1,49 @@
-﻿---
+---
 external help file: Nutanix.Prism.Common.dll-Help.xml
 Module Name: Nutanix.Prism.Common
 online version:
 schema: 2.0.0
 ---
 
-# Disconnect-PrismCentral
+# New-NutanixObject
 
 ## SYNOPSIS
-Disconnect from one or all of prism central hosts
+Creates a Nutanix Object.
 
 ## SYNTAX
 
 ```
-Disconnect-PrismCentral [-Servers] <String[]> [<CommonParameters>]
+New-NutanixObject [-Name] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Disconnect from one or all of prism central hosts. use '*' as -Server parameter to disconnect all.
+Creates a Nutanix Object. This is used to create an object for parameters for other commands which requires certain Nutanix object. For example, to create VM, BootConfig can be created by `$boot = New-NutanixObject BootConfig`
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Disconnect-PrismCentral -Servers 10.46.28.31
+PS C:\> $boot = New-NutanixObject BootConfig
 ```
 
-Disconnects from Prism Central host 10.46.28.31
-
-### Example 2
-```powershell
-PS C:\> Disconnect-PrismCentral -Servers *
-```
-Disconnects from all Prism Central
+Creates a BootConfig type of object to be used for creating a VM
 
 ## PARAMETERS
 
-### -Servers
-Name or IP address of Prism Central
+### -Name
+
+Name of the object. Available object names are VMDiskAddress, BootConfig, VMDiskSpecCreate, VMDisk, VMNicSpec.
+
 
 ```yaml
-Type: String[]
+Type: String
 Parameter Sets: (All)
-Aliases: S
+Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -56,11 +52,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String[]
+### None
 ## OUTPUTS
 
 ### System.Object
 ## NOTES
 
 ## RELATED LINKS
-[Connect-PrismCentral]

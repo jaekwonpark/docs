@@ -8,85 +8,87 @@ schema: 2.0.0
 # Wait-Task
 
 ## SYNOPSIS
-Waits untill all tasks are finished or timeout
+Waits until all tasks are finished or timeout
 
 ## SYNTAX
 
 ### Server (Default)
 ```
-Wait-Task -TaskIDs <System.Collections.Generic.List`1[System.String]> [-Timeoutseconds <Int64>]
- [-IncludeEntityNames] [[-Servers] <String[]>] [<CommonParameters>]
+Wait-Task [-TaskIds] <System.Collections.Generic.HashSet`1[System.String]> [-Timeoutseconds <Int64>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ### Pipe
 ```
-Wait-Task -TaskIDDTOs <System.Collections.Generic.List`1[Nutanix.Prism.DTO.Acropolis.TaskIdDTO]>
- [[-Servers] <String[]>] [<CommonParameters>]
+Wait-Task -TaskInfos <System.Collections.Generic.List`1[Nutanix.Prism.Data.Task.Info]>
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Waits for the list of tasks are finished. If Timeoutseconds is not given, waits until 30 seconds. Maximum wait is 30 seconds. If task does not finish till timeout, it will exit.
-In most cases, use pipe line input like examples
+Waits for one or more of tasks are finished. If Timeoutseconds is not given, waits until 30 seconds. Maximum wait is 30 seconds. If task does not finish till timeout, it will exit with the command to continue wait for another 30 seconds. Copy and paste the command to continue waiting for the task.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Set-Vm -uuid 5b25f68b-fe73-4cdc-88bf-a5485dff1627 -ClusterName auto_cluster_prod_jae_park_4f8a13711f9f -MemoryMb 700 | Wait-Task -Server 10.46.152.135
+PS C:\> Get-VM -Uuid $vmUuid | Stop-VM | Wait-Task
 ```
 
-This will update VM and wait until it completes or till 30 seconds. Note that when multiple Prism Central are conntected, -Server has to be given so it does not failout from the Prism Central that does not have the task UUID.
+Stops the VM and waits for the task is completed. If the -Timeoutseconds is not given, it waits for 30 seconds. If the task is still not completed, it displays error with the Wait-Task command with the task ID. Copy and Paste the command to continue for another 30 secods or for the timeout given by -Timeoutseconds.
 
 ## PARAMETERS
 
 ### -Servers
-Host name or IP address of Prism Central
+Name or IP address of Prism Central
 
 ```yaml
-Type: String[]
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: (All)
 Aliases: S
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -TaskIDs
-{{ Fill TaskIDs Description }}
+### -TaskIds
+Task UUID
 
 ```yaml
-Type: System.Collections.Generic.List`1[System.String]
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: Server
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TaskInfos
+TaskInfo object. Typically this is for pipeline input, such as from Start-VM, Stop-VM, Set-VM, Set-Image, etc.
+
+```yaml
+Type: System.Collections.Generic.List`1[Nutanix.Prism.Data.Task.Info]
+Parameter Sets: Pipe
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Timeoutseconds
-{{ Fill Timeoutseconds Description }}
+Waits for the given timeout then exits with error if the task is not completed within the timeout.
 
 ```yaml
 Type: Int64
 Parameter Sets: Server
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Int64
-Parameter Sets: Template
 Aliases:
 
 Required: False
@@ -101,10 +103,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.Generic.List`1[[Nutanix.Prism.DTO.Acropolis.TaskIdDTO, Nutanix.Prism.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+### System.Collections.Generic.List`1[[Nutanix.Prism.Data.Task.Info, Nutanix.Prism.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ### System.Int64
-### System.Management.Automation.SwitchParameter
-### System.String[]
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object

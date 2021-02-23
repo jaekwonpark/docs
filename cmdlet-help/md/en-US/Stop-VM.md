@@ -14,92 +14,68 @@ Power off the VM
 
 ### Server (Default)
 ```
-Stop-VM -Vmid <Object> -ClusterUUID <String> [[-Servers] <String[]>] [<CommonParameters>]
+Stop-VM [-Uuid] <String> [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
-### Template
+### Alt1
 ```
-Stop-VM [-Vmid <Object>] [-ClusterUUID <String>] [[-Servers] <String[]>] [<CommonParameters>]
+Stop-VM -VmInfo <Info> [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Power off VM
+Set the power state off
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-VM -SearchString testvm -SearchAttributeList vm_name | Stop-VM
+PS C:\> Get-VM -PowerState ON | Stop-VM | Wait-Task
 ```
 
-Example will power off all VM if the VM name contains 'testvm'
+Searches for the VM that are powered on then stop those VMs then waits for the task completed.
 
 ## PARAMETERS
 
-### -ClusterUUID
-Cluster UUID
-
-```yaml
-Type: String
-Parameter Sets: Server
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: Template
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -Servers
-Host name or IP address of Prism Central
+Name or IP address of Prism Central
 
 ```yaml
-Type: String[]
+Type: System.Collections.Generic.HashSet`1[System.String]
 Parameter Sets: (All)
 Aliases: S
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Uuid
-UUID of the VM to power off
-
+UUID of the VM
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: Server
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -VmInfo
+
+VM info object. Typically this is to be used for pipeline input from `Get-VM`, such as, Get-VM -Uuid $vmUuid | Stop-VM
+
 ```yaml
-Type: Object
-Parameter Sets: Template
+Type: Info
+Parameter Sets: Alt1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -111,9 +87,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object
 ### System.String
-### System.String[]
+### Nutanix.Prism.Data.Vm.Info
+### System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## OUTPUTS
 
 ### System.Object
