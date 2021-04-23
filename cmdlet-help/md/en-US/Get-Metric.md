@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -IntervalInSecs
-Interval of the metric
+Interval of the metric in range of 1 to 300
 
 ```yaml
 Type: Int32

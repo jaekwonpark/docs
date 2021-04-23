@@ -397,7 +397,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:description>
-            <maml:para>Interval of the metric</maml:para>
+            <maml:para>Interval of the metric in range of 1 to 300</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -529,7 +529,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:description>
-            <maml:para>Interval of the metric</maml:para>
+            <maml:para>Interval of the metric in range of 1 to 300</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -661,7 +661,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:description>
-            <maml:para>Interval of the metric</maml:para>
+            <maml:para>Interval of the metric in range of 1 to 300</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -793,7 +793,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>IntervalInSecs</maml:name>
           <maml:description>
-            <maml:para>Interval of the metric</maml:para>
+            <maml:para>Interval of the metric in range of 1 to 300</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -856,7 +856,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>IntervalInSecs</maml:name>
         <maml:description>
-          <maml:para>Interval of the metric</maml:para>
+          <maml:para>Interval of the metric in range of 1 to 300</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
