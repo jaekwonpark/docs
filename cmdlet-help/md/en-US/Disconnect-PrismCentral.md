@@ -32,6 +32,7 @@ Disconnects from Prism Central host 10.46.28.31
 ```powershell
 PS C:\> Disconnect-PrismCentral -Servers *
 ```
+
 Disconnects from all Prism Central
 
 ## PARAMETERS

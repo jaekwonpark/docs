@@ -13,7 +13,7 @@ Displays the image info of specified uuid or all Images.
 ## SYNTAX
 
 ```
-Get-Image [[-ImageId] <String>] [-IncludeVmDiskSizes] [-IncludeVmDiskPaths]
+Get-Image [-IncludeVmDiskId] [[-ImageId] <String>]
  [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
@@ -48,6 +48,21 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeVmDiskId
+{{ Fill IncludeVmDiskId Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

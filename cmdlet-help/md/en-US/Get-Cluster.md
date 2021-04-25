@@ -41,12 +41,14 @@ Displays all the cluster registered in all connected Prism Central.
 ```powershell
 Get-Cluster mycluster
 ```
+
 Displays the cluster info of name mycluster
 
 ### Example 3
 ```powershell
 Get-Cluster 0005bade-af08-c5ec-0000-000000019dda
 ```
+
 Displays the cluster info of the cluster with uuid 0005bade-af08-c5ec-0000-000000019dda. The first parameter can be either cluster name or UUID
 
 ## PARAMETERS

@@ -13,7 +13,8 @@ Displays storage containers.
 ## SYNTAX
 
 ```
-Get-StorageContainer [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+Get-StorageContainer [-Page <Int32>] [-Count <Int32>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +30,36 @@ PS C:\> Get-StorageContainer
 Displays a list of available storage container from the connected Prism Central.
 
 ## PARAMETERS
+
+### -Count
+{{ Fill Count Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Page
+{{ Fill Page Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Servers
 Name or IP address of Prism Central

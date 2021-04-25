@@ -15,15 +15,15 @@ Updates VM
 ### Server (Default)
 ```
 Set-VM -Uuid <String> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>]
- [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
- [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+ [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Servers <System.Collections.Generic.HashSet`1[System.String]>]
+ [<CommonParameters>]
 ```
 
 ### Alt1
 ```
 Set-VM -VmInfo <Info> [-Name <String>] [-Description <String>] [-NumVcpus <Int64>] [-NumCoresPerVcpu <Int64>]
- [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Timezone <String>]
- [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+ [-MemoryMb <Int64>] [-Boot <BootConfigDTO>] [-Servers <System.Collections.Generic.HashSet`1[System.String]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

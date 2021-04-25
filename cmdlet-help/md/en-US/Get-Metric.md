@@ -52,6 +52,7 @@ Displays the metric controller_num_iops from 600 seconds ago till now with 60 se
 ```powershell
 PS C:\>  Get-Help Get-Metric -Parameter Metrics
 ```
+
 Displays all available metrics names
 
 ## PARAMETERS

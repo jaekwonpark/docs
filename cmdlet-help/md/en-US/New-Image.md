@@ -47,7 +47,6 @@ PS C:\> New-Image -Servers 10.46.28.27 -Name testimage1 -ImageType DISK_IMAGE -S
 
 Creates a new image in Prisme Central 10.46.28.27. Prism Central will automatically select available cluster and creates the image.
 
-
 ## PARAMETERS
 
 ### -ClusterName

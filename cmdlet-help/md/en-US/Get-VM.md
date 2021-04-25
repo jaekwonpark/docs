@@ -12,8 +12,33 @@ Displays a list of VM
 
 ## SYNTAX
 
+### Server (Default)
 ```
-Get-VM [-Count <Int32>] [-Page <Int32>] [[-Name] <String>] [-PowerState <String>] [-Uuid <String>]
+Get-VM [-Count <Int32>] [-Page <Int32>] [-ClusterName <String>] [[-Name] <String>] [-Contains]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt1
+```
+Get-VM [-Count <Int32>] [-Page <Int32>] [-ClusterName <String>] [[-Name] <String>] [-StartsWith]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt2
+```
+Get-VM [-Count <Int32>] [-Page <Int32>] [-ClusterName <String>] [[-Name] <String>] [-EndsWith]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt3
+```
+Get-VM [-Count <Int32>] [-Page <Int32>] [-PowerState <String>]
+ [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
+```
+
+### Alt4
+```
+Get-VM [-Count <Int32>] [-Page <Int32>] [-Uuid <String>]
  [-Servers <System.Collections.Generic.HashSet`1[System.String]>] [<CommonParameters>]
 ```
 
@@ -43,8 +68,37 @@ PS C:\> Get-VM -PowerState ON
 
 Displays all VMs with power state is ON.
 
-
 ## PARAMETERS
+
+### -ClusterName
+{{ Fill ClusterName Description }}
+
+```yaml
+Type: String
+Parameter Sets: Server, Alt1, Alt2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Contains
+{{ Fill Contains Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Server
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Count
 Number of VMs to display
@@ -61,12 +115,27 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -EndsWith
+{{ Fill EndsWith Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Alt2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Displays one or more VMs that have the name contains given string
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Server, Alt1, Alt2
 Aliases:
 
 Required: False
@@ -96,7 +165,7 @@ Displays the VMs with given power state. Available state is ON or OFF
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Alt3
 Aliases:
 Accepted values: ON, OFF
 
@@ -122,12 +191,27 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -StartsWith
+{{ Fill StartsWith Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Alt1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Uuid
 UUID of the VM
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Alt4
 Aliases:
 
 Required: False

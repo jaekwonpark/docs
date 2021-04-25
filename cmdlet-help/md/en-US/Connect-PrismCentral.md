@@ -14,14 +14,14 @@ Connects to Prism Central
 
 ### Cred (Default)
 ```
-Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInvalidSSLCerts] [-ForcedConnection]
- [<CommonParameters>]
+Connect-PrismCentral [-Server] <String> -Credential <PSCredential> [-AcceptInvalidSSLCerts]
+ [-SessionTimeoutSeconds <UInt32>] [-ForcedConnection] [<CommonParameters>]
 ```
 
 ### Pswd
 ```
 Connect-PrismCentral [-Server] <String> -UserName <String> -Password <SecureString> [-AcceptInvalidSSLCerts]
- [-ForcedConnection] [<CommonParameters>]
+ [-SessionTimeoutSeconds <UInt32>] [-ForcedConnection] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,8 +51,11 @@ and the $Secure can be created as same way as Example 1.
 ### Example 3
 ```powershell
 PS C:\> Connect-PrismCentral -Server 10.36.240.21 -UserName admin -AcceptInvalidSSLCerts
-``` 
+```
+
+ 
 Connects to Prism Central IP 10.36.240.21 with user name `admin`. This will prompt for password, so user can type the password to console.
+
 ## PARAMETERS
 
 ### -AcceptInvalidSSLCerts
@@ -72,6 +75,8 @@ Accept wildcard characters: False
 
 ### -Credential
 Credential in PSCredential type. To create a credential, run `$Cred = New-Object System.Management.Automation.PSCredential(<username>, $Secure)` where <username> is a string and $Secure is a SecureString type of a string. To create a secure string, run `$Secure=ConvertTo-SecureString <password> -AsPlainText -Force` where <password> is the password in raw text string.
+
+
 ```yaml
 Type: PSCredential
 Parameter Sets: Cred
@@ -126,6 +131,21 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -SessionTimeoutSeconds
+Session timeout in seconds. If there is no activity against Prism Central within this seconds, the session will be disconnected
+
+```yaml
+Type: UInt32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

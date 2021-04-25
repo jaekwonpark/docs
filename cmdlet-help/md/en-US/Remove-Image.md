@@ -29,7 +29,6 @@ PS C:\> Remove-Image -ImageId 25a2a7dc-cf26-4cb7-8bfb-f103fdfcd2d1 | Wait-Task
 
 Removes the image with UUID 25a2a7dc-cf26-4cb7-8bfb-f103fdfcd2d1 and wait for the task to be completed.
 
-
 ## PARAMETERS
 
 ### -ImageId
