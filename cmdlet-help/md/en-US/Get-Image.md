@@ -54,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVmDiskId
-{{ Fill IncludeVmDiskId Description }}
+Displays vm_disk_id which can be used for cloning VM. For example, you can create VMDiskAddress object then assign vm_disk_id to vmdisk_uuid property of VMDiskAddress
 
 ```yaml
 Type: SwitchParameter

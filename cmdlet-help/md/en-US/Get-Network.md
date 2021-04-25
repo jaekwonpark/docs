@@ -32,7 +32,7 @@ Displays all available networks from connected Prism Central.
 ## PARAMETERS
 
 ### -Count
-{{ Fill Count Description }}
+Number of subnet to display
 
 ```yaml
 Type: Int32
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -Page
-{{ Fill Page Description }}
+Number of page to display
 
 ```yaml
 Type: Int32

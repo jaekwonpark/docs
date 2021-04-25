@@ -59,19 +59,48 @@ Displays all VMs from connected Prism Central
 PS C:\> Get-VM testvm
 ```
 
-Displays all VMs that has `testvm` in VMs name.
+Displays all VMs with VM name `testvm`.
 
-### Example 2
+### Example 3
+```powershell
+PS C:\> Get-VM testvm -Contains
+```
+
+Displays all VMs that the name contains `testvm`.
+
+### Example 4
+```powershell
+PS C:\> Get-VM testvm -StartsWith
+```
+
+Displays all VMs that the name starts with `testvm`.
+
+### Example 5
+```powershell
+PS C:\> Get-VM testvm -EndsWith
+```
+
+Displays all VMs that the name ends with `testvm`.
+
+### Example 6
 ```powershell
 PS C:\> Get-VM -PowerState ON
 ```
 
 Displays all VMs with power state is ON.
 
+### Example 7
+```powershell
+PS C:\> Get-VM -Count 10 -Page 2
+```
+
+Displays 10 VMs from the second page
+
+
 ## PARAMETERS
 
 ### -ClusterName
-{{ Fill ClusterName Description }}
+Name of cluster to search VMs from. If not given, it searches from all connected Prism Central or given Prism Central host.
 
 ```yaml
 Type: String
@@ -86,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Contains
-{{ Fill Contains Description }}
+Displays VMs that contains given name
 
 ```yaml
 Type: SwitchParameter
@@ -116,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndsWith
-{{ Fill EndsWith Description }}
+Displays the VMs that the name ends with the given name
 
 ```yaml
 Type: SwitchParameter
@@ -131,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Displays one or more VMs that have the name contains given string
+Displays one or more VMs with the given name
 
 ```yaml
 Type: String
@@ -192,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-{{ Fill StartsWith Description }}
+Displays VMs with the name starts with the given name
 
 ```yaml
 Type: SwitchParameter

@@ -32,7 +32,7 @@ Displays a list of available storage container from the connected Prism Central.
 ## PARAMETERS
 
 ### -Count
-{{ Fill Count Description }}
+Number of storage containers to display
 
 ```yaml
 Type: Int32
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -Page
-{{ Fill Page Description }}
+Number of page to display
 
 ```yaml
 Type: Int32

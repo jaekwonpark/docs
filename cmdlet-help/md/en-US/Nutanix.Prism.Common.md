@@ -8,7 +8,7 @@ Locale: en-US
 
 # Nutanix.Prism.Common Module
 ## Description
-{{ Fill in the Description }}
+This module contains commands for connection and helper commands
 
 ## Nutanix.Prism.Common Cmdlets
 ### [Connect-PrismCentral](Connect-PrismCentral.md)
