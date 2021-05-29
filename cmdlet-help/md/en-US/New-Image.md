@@ -47,6 +47,12 @@ PS C:\> New-Image -Servers 10.46.28.27 -Name testimage1 -ImageType DISK_IMAGE -S
 
 Creates a new image in Prisme Central 10.46.28.27. Prism Central will automatically select available cluster and creates the image.
 
+### Example 3
+```powershell
+PS C:\> New-Image -Servers 10.46.28.27,10.46.25.44 -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2
+```
+Creates a new image in multiple Prism Central IPs
+
 ## PARAMETERS
 
 ### -ClusterName
@@ -111,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: System.Collections.Generic.HashSet`1[System.String]

@@ -30,7 +30,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -57,7 +57,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -84,7 +84,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -197,7 +197,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -236,7 +236,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -432,7 +432,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -564,7 +564,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -696,7 +696,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -828,7 +828,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -972,7 +972,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -1079,7 +1079,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1142,7 +1142,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -1230,7 +1230,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1269,7 +1269,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -1368,7 +1368,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1407,7 +1407,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -1573,7 +1573,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1636,7 +1636,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1721,7 +1721,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1776,7 +1776,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1815,7 +1815,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -1926,7 +1926,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -2210,7 +2210,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -2285,7 +2285,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -2353,6 +2353,13 @@
         <dev:code>PS C:\&gt; New-Image -Servers 10.46.28.27 -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2</dev:code>
         <dev:remarks>
           <maml:para>Creates a new image in Prisme Central 10.46.28.27. Prism Central will automatically select available cluster and creates the image.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; New-Image -Servers 10.46.28.27,10.46.25.44 -Name testimage1 -ImageType DISK_IMAGE -SourceUri http://image.upload.host.com/GoldImages/centoslight_run_fioboot.qcow2</dev:code>
+        <dev:remarks>
+          <maml:para>Creates a new image in multiple Prism Central IPs</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2448,7 +2455,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -2547,7 +2554,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -2646,7 +2653,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -2778,7 +2785,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -2805,7 +2812,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -2889,7 +2896,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -2904,7 +2911,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -3047,7 +3054,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3122,7 +3129,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -3286,7 +3293,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3385,7 +3392,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3484,7 +3491,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -3616,7 +3623,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3631,7 +3638,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3658,7 +3665,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -3781,7 +3788,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3796,7 +3803,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3823,7 +3830,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>
@@ -3939,7 +3946,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3966,7 +3973,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
           <dev:type>
@@ -3993,7 +4000,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Generic.HashSet`1[System.String]</command:parameterValue>
         <dev:type>

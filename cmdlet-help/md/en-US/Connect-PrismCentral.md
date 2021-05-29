@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
-Name or IP address of Prism Central.
+Comma separated Hostname or IP address of Prism Central.
 
 ```yaml
 Type: String

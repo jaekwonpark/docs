@@ -38,7 +38,7 @@ Disconnects from all Prism Central
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: String[]

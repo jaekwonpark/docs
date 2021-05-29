@@ -44,7 +44,7 @@ Starts the VM returned from Get-VM command then wait for the task completed.
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: System.Collections.Generic.HashSet`1[System.String]

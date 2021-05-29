@@ -39,7 +39,7 @@ Stops the VM and waits for the task is completed. If the -Timeoutseconds is not 
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: System.Collections.Generic.HashSet`1[System.String]

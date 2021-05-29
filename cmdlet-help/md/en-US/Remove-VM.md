@@ -39,7 +39,7 @@ Find the UUID from Prism Central 10.46.28.27 then removes it. It will remove onl
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: System.Collections.Generic.HashSet`1[System.String]

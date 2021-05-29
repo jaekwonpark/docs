@@ -37,7 +37,7 @@ Searches for the VM that are powered on then stop those VMs then waits for the t
 ## PARAMETERS
 
 ### -Servers
-Name or IP address of Prism Central
+Comma separated Hostname or IP address of Prism Central
 
 ```yaml
 Type: System.Collections.Generic.HashSet`1[System.String]

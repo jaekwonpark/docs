@@ -18,7 +18,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
           <maml:name>Server</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central.</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -79,7 +79,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
           <maml:name>Server</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central.</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -200,7 +200,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="S">
         <maml:name>Server</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central.</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -320,7 +320,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
           <maml:name>Servers</maml:name>
           <maml:description>
-            <maml:para>Name or IP address of Prism Central</maml:para>
+            <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -335,7 +335,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="S">
         <maml:name>Servers</maml:name>
         <maml:description>
-          <maml:para>Name or IP address of Prism Central</maml:para>
+          <maml:para>Comma separated Hostname or IP address of Prism Central</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
